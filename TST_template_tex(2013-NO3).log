@@ -1,0 +1,1025 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.31)  18 SEP 2017 01:56
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**TST_template_tex(2013-NO3).tex
+(./TST_template_tex(2013-NO3).tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./TsT.cls
+
+LaTeX Warning: You have requested document class `TsT',
+               but the document class provides `tst'.
+
+Document Class: tst 2012/02/10 v0.1 TST LaTeX English template class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/flushend.sty
+Package: flushend 2015/04/14 v3.1 Balancing columns in twocolumn mode
+\flushend@@lastskip@a=\skip43
+\flushend@@lastskip@b=\skip44
+\flushend@@lastskip@c=\skip45
+\flushend@@penalty@a=\count87
+\flushend@@lastkern@a=\dimen103
+\var@@temp@spread=\dimen104
+\var@@temp@a=\dimen105
+\flushend@@page@rule=\dimen106
+\flushend@@varbox@a=\box26
+\flushend@@varbox@c=\box27
+\flushend@@tempbox@a=\box28
+\flushend@@tempbox@c=\box29
+\@viper=\box30
+\hold@viper=\box31
+\atColsBreak=\toks14
+\atColsEnd=\toks15
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count88
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2016/04/06 v4.08 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+
+! LaTeX Error: File `picins.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ccaption/ccaption.sty
+Package: ccaption 2011/08/07 v3.2c Extended captioning and new floats
+\@contcwidth=\skip46
+\@contindw=\skip47
+\abovelegendskip=\skip48
+\belowlegendskip=\skip49
+\c@newflo@tctr=\count89
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count90
+\calc@Bcount=\count91
+\calc@Adimen=\dimen109
+\calc@Bdimen=\dimen110
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count92
+\calc@Cskip=\skip52
+)
+\tst@linespace=\skip53
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks17
+\footnotemargin=\dimen111
+\c@pp@next@reset=\count93
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip54
+\subfigcapskip=\skip55
+\subfigcaptopadj=\dimen112
+\subfigbottomskip=\skip56
+\subfigcapmargin=\dimen113
+\subfiglabelskip=\skip57
+\c@subfigure=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@lotdepth=\count97
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip58
+\subfig@bottom=\skip59
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen114
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip60
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen115
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen116
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count98
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count99
+\leftroot@=\count100
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count101
+\DOTSCASE@=\count102
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen117
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
+\dotsspace@=\muskip11
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks19
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks20
+\eqnshift@=\dimen118
+\alignsep@=\dimen119
+\tagshift@=\dimen120
+\tagwidth@=\dimen121
+\totwidth@=\dimen122
+\lineht@=\dimen123
+\@envbody=\toks21
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip63
+\thm@postskip=\skip64
+\thm@headsep=\skip65
+\dth@everypar=\toks28
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count110
+\@cmidlb=\count111
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count112
+\@lastruleclass=\count113
+\@thisrulewidth=\dimen136
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 144.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count114
+\float@exts=\toks29
+\float@box=\box34
+\@float@everytoks=\toks30
+\@floatcapt=\box35
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip66
+\f@ncyO@elh=\skip67
+\f@ncyO@erh=\skip68
+\f@ncyO@olh=\skip69
+\f@ncyO@orh=\skip70
+\f@ncyO@elf=\skip71
+\f@ncyO@erf=\skip72
+\f@ncyO@olf=\skip73
+\f@ncyO@orf=\skip74
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen137
+\captionmargin@=\dimen138
+\captionwidth=\dimen139
+\caption@tempdima=\dimen140
+\caption@indent=\dimen141
+\caption@parindent=\dimen142
+\caption@hangindent=\dimen143
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\let \@conttempa \relax
+ \ifdim \prevdepth >-99\p@ \vskip \abovecaptionskip \else \def \@conttempa {\vb
+ox to\topskip {}}\fi \let \@contfnote \footnote \renewcommand {\footnote }[2][]
+{} \let \@contfmark \footnotemark \renewcommand {\footnotemark }[1][]{} \let \@
+contlabel \label \renewcommand {\label }[1]{} \sbox \@tempboxa {\@contnfont #1\
+@contdelim \@conttfont #2} \let \footnote \@contfnote \let \footnotemark \@cont
+fmark \let \label \@contlabel \ifdim \wd \@tempboxa <\linewidth \centering \fi 
+\if@contcw \centering \parbox {\@contcwidth }{\fi \if@conthang \sbox \@tempboxa
+ {\@contnfont #1\@contdelim } \@contpre {\@contnfont #1\@contdelim }\@conttempa
+ {\@contcstyle \hangindent =\wd \@tempboxa \hangafter =\@ne \@conttfont #2\par 
+} \else \if@contindent \@contpre {\@contnfont #1\@contdelim }\@conttempa {\@con
+tcstyle \hangindent =\@contindw \hangafter =\@ne \@conttfont #2\par } \else \@c
+ontpre {\@contnfont #1\@contdelim }\@conttempa {\@contcstyle \@conttfont #2\par
+ } \fi \fi \@contpost \if@contcw \par } \fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count115
+Package caption Info: float package is loaded.
+Package caption Info: picins package is loaded.
+Package caption Info: subfigure package is loaded.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2016/02/08 v2.0 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count116
+\c@dblbotnumber=\count117
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/cuted.sty
+Package: cuted 2012/10/04 v1.5 Mixing onecolumn and twocolumn modes
+\At@ViperColsBreak=\toks31
+\v@aaa=\box36
+\v@ccc=\box37
+\lastskip@a=\skip75
+\lastskip@b=\skip76
+\lastskip@d=\skip77
+\lastbox@a=\box38
+\stripsep=\skip78
+\viper@penalty=\count118
+\ht@viper=\dimen144
+)
+(./captionhack.sty)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+
+Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
+orted.
+
+))
+\c@assumption=\count119
+\c@definition=\count120
+\c@lemma=\count121
+\c@theorem=\count122
+\c@proposition=\count123
+\c@corollary=\count124
+
+
+LaTeX Warning: Unused global option(s):
+    [10.5pt,journal].
+
+(./TST_template_tex(2013-NO3).aux)
+\openout1 = `TST_template_tex(2013-NO3).aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 67.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: Incompatible package detected (regarding \caption).
+(caption)             \caption = macro:->\@protected@testopt \caption \\caption
+ {}.
+
+
+Package caption Warning: \caption will not be redefined since it's already
+(caption)                redefined by a document class or package which is
+(caption)                unknown to the caption package.
+See the caption package documentation for explanation.
+
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16.06> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16.06> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 73.
+Extra height:0.0pt when 0.0pt
+(2)Left:0.0pt Right:0.0pt Output:0.0pt
+- LAST -
+Left:0.0pt
+Right:0.0pt
+Output:0.0pt
+
+LaTeX Warning: Optional argument of \twocolumn too tall on page 1(1 stulpelis).
+
+
+
+Overfull \vbox (9.39394pt too high) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 1 contains only floats.
+
+
+Overfull \vbox (9.39394pt too high) has occurred while \output is active []
+
+
+[1
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+
+Overfull \hbox (18.93277pt too wide) detected at line 108
+\OT1/ptm/b/n/9.03374 TSINGHUA SCIENCE AND TECHNOLOGY
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 121
+\OT1/ptm/b/n/9.03374 I S S N []l l []1 0 0 7 - 0 2 1 4 []l l []0 ? / ? ? []l l 
+[]p p ? ? ?- ? ? ?
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 129
+\OT1/ptm/b/n/9.03374 V o l u m e 1 8, N u m b e r 3, J u n e 2 0 1 3
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 139.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 14
+0.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 140.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 140.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 140.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 152
+.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.51686> not available
+(Font)              size <5> substituted on input line 152.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.51686> not available
+(Font)              size <5> substituted on input line 152.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.51686> not available
+(Font)              size <5> substituted on input line 152.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (6.01668pt too high) has occurred while \output is active []
+
+Extra height:0.0pt when 3.98332pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:3.98332pt Right:10.0pt Output:3.98332pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:10.0pt Right:0.0pt Output:10.0pt
+- LAST -
+Left:10.0pt
+Right:0.0pt
+Output:10.0pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 188--189
+[]\OT1/ptm/m/n/9.03374 Wang Zhenyang, Deng Zhi-dong, Wang Shiyao are with
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.51686> not available
+(Font)              size <5> substituted on input line 189.
+
+
+Overfull \hbox (2.87111pt too wide) in paragraph at lines 185--194
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
+
+Underfull \hbox (badness 7256) in paragraph at lines 203--208
+[]\OT1/ptm/m/n/10.53937 Semantic seg-men-ta-tion, also known as scene
+ []
+
+
+Underfull \vbox (badness 6477) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1590) has occurred while \output is active []
+
+ [2
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.53937> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 230.
+
+
+LaTeX Warning: Reference `f:arch' on page 3 undefined on input line 238.
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 234--240
+\OT1/ptm/m/n/10.53937 for im-age clas-si-fi-ca-tion which win IL-SRVC 2015
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 234--240
+\OT1/ptm/m/n/10.53937 ResNet-101, ResNet-50 is cheaper in com-pu-ta-tion
+ []
+
+
+LaTeX Warning: Reference `f:arch' on page 3 undefined on input line 242.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 251.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 252.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 252.
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 245--254
+\OT1/ptm/b/n/10.53937 seg-men-ta-tion task, the con-text is im-por-tant to
+ []
+
+
+Underfull \vbox (badness 2302) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `f:arch' on page 3 undefined on input line 263.
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 262--266
+[]\OT1/ptm/b/n/10.53937 The coarse seg-men-ta-tion branch is a base-line
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 262--266
+\OT1/ptm/b/n/10.53937 model for im-age se-man-tic seg-men-ta-tion. This
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 262--266
+\OT1/ptm/b/n/10.53937 branch is shown as the red part in Fig. [] b,
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 268--276
+\OT1/ptm/b/n/10.53937 the same res-o-lu-tion as the in-put im-age. It is
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 268--276
+\OT1/ptm/b/n/10.53937 of easy pixel in-stances and a small num-ber of
+ []
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 284.
+
+
+Underfull \hbox (badness 6236) in paragraph at lines 278--287
+[]\OT1/ptm/b/n/10.53937 The re-fine seg-men-ta-tion branch re-fines the
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 278--287
+\OT1/ptm/b/n/10.53937 branch is de-note as easy pixel in-stances, while
+ []
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 278--287
+\OT1/ptm/b/n/10.53937 pixel in-stances. In-spired by the PSP-Net [],
+ []
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 278--287
+\OT1/ptm/b/n/10.53937 net-work to ex-tract multi-scale fea-tures. And
+ []
+
+
+Underfull \hbox (badness 4303) in paragraph at lines 278--287
+\OT1/ptm/b/n/10.53937 the re-fine seg-men-ta-tion branch is a weighted
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 287.
+
+Overfull \hbox (14.92288pt too wide) has occurred while \output is active
+ []  \OT1/phv/m/n/9.03374 Wang Zhenyang et al.: \OT1/ptm/b/it/9.03374 Attention
+ to Hard Examples: A Cascade Coarse to Fine Network Architecture for Semantic S
+egmentation   \OT1/ptm/m/n/9.03374 3 []
+ []
+
+
+Overfull \hbox (1.71642pt too wide) has occurred while \output is active
+[] 
+ []
+
+[3]
+Underfull \hbox (badness 3009) in paragraph at lines 299--300
+[]\OT1/ptm/b/n/10.53937 In the train-ing pro-cess, the rough se-man-tic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+\OT1/ptm/b/n/10.53937 seg-men-ta-tion net-work can give a se-man-tic
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 299--300
+\OT1/ptm/b/n/10.53937 re-sult of the clas-si-fi-ca-tion of the two cat-e-gories
+
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 303--305
+\OT1/ptm/b/n/10.53937 in-ter-ac-tions is ma-ture on CPUs, and typ-i-cally
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 325--327
+\OT1/ptm/b/n/10.53937 in-ter-ac-tions is ma-ture on CPUs, and typ-i-cally
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.53937> not available
+
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 331.
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 339.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.03749> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 363.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 375.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+
+LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
+(Font)              using `OMS/ptm/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 375.
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9.03374> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 375.
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <9.03374> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 375.
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ¯ in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ¯ in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ¯ in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+
+Underfull \hbox (badness 2065) in paragraph at lines 393--394
+[]\OT1/ptm/b/n/9.03374 J. C. Phe-lan, B. G. Link, A. Stueve, and B. A.
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 393--394
+\OT1/ptm/b/n/9.03374 Health As-so-ci-a-tion, New York, USA, 1969. (Pa-per
+ []
+
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+[]\OT1/ptm/b/n/9.03374 A. Mah-davi and B. Spa-so-je-vic, In-cor-po-rat-ing
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 396--397
+\OT1/ptm/b/n/9.03374 sim-u-la-tion into build-ing sys-tems con-trol logic, In
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+\OT1/ptm/b/it/9.03374 Proc. 10th Int. Build-ing Per-for-mance Sim-u-la-tion
+ []
+
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+[4]
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
+Missing character: There is no ¡ in font ptmb7t!
+Missing character: There is no ± in font ptmb7t!
+
+Underfull \hbox (badness 1533) in paragraph at lines 408--409
+\OT1/ptm/b/n/9.03374 of dys-reg-u-lated cy-tokine pro-duc-tion, \OT1/ptm/b/it/9
+.03374 J. Mol. Med.\OT1/ptm/b/n/9.03374 ,
+ []
+
+Extra height:0.0pt when 79.80984pt
+(2)Left:79.80984pt Right:79.50563pt Output:79.80984pt
+- LAST -
+Left:79.80984pt
+Right:79.50563pt
+Output:79.80984pt
+./TST_template_tex(2013-NO3).tex:417: Undefined control sequence.
+\\biography ...4\baselineskip \zihao {5-} \parpic 
+                                                  {\includegraphics [height=...
+l.417 \begin{biography}[yourphotofilename.eps]
+                                              
+? 
+File: yourphotofilename.eps Graphic file (type eps)
+<yourphotofilename.eps>
+Underfull \hbox (badness 2961) in paragraph at lines 417--420
+\OT1/ptm/b/n/9.03374 should be lim-ited to one para-graph con-sist-ing of the
+ []
+
+
+Underfull \hbox (badness 2884) in paragraph at lines 417--420
+\OT1/ptm/b/n/9.03374 years achieved; se-quen-tially or-dered places of em-ploy
+ []
+
+./TST_template_tex(2013-NO3).tex:422: Undefined control sequence.
+\\biography ...4\baselineskip \zihao {5-} \parpic 
+                                                  {\includegraphics [height=...
+l.422 \begin{biography}[yourphotofilename.eps]
+                                              
+? 
+File: yourphotofilename.eps Graphic file (type eps)
+<yourphotofilename.eps>
+Underfull \hbox (badness 2961) in paragraph at lines 422--425
+\OT1/ptm/b/n/9.03374 should be lim-ited to one para-graph con-sist-ing of the
+ []
+
+
+Underfull \hbox (badness 2884) in paragraph at lines 422--425
+\OT1/ptm/b/n/9.03374 years achieved; se-quen-tially or-dered places of em-ploy
+ []
+
+./TST_template_tex(2013-NO3).tex:427: Undefined control sequence.
+\\biography ...4\baselineskip \zihao {5-} \parpic 
+                                                  {\includegraphics [height=...
+l.427 \begin{biography}[yourphotofilename.eps]
+                                              
+? 
+File: yourphotofilename.eps Graphic file (type eps)
+<yourphotofilename.eps>
+Underfull \hbox (badness 2961) in paragraph at lines 427--430
+\OT1/ptm/b/n/9.03374 should be lim-ited to one para-graph con-sist-ing of the
+ []
+
+
+Underfull \hbox (badness 2884) in paragraph at lines 427--430
+\OT1/ptm/b/n/9.03374 years achieved; se-quen-tially or-dered places of em-ploy
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 295.91585pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:295.91585pt Right:301.47841pt Output:295.91585pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:301.47841pt Right:289.73819pt Output:301.47841pt
+- LAST -
+Left:301.47841pt
+Right:289.73819pt
+Output:301.47841pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (14.92288pt too wide) has occurred while \output is active
+ []  \OT1/phv/m/n/9.03374 Wang Zhenyang et al.: \OT1/ptm/b/it/9.03374 Attention
+ to Hard Examples: A Cascade Coarse to Fine Network Architecture for Semantic S
+egmentation   \OT1/ptm/m/n/9.03374 5 []
+ []
+
+
+Overfull \hbox (1.71642pt too wide) has occurred while \output is active
+[] 
+ []
+
+[5
+
+]
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10.53937> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 440.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 440.
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 439--441
+\OT1/ptm/b/n/10.53937 FIGURES. Be-low each fig-ure, there should be
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 439--441
+\OT1/ptm/b/n/10.53937 a brief ti-tle de-scrib-ing its whole con-tents, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
+
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 442--444
+\OMS/cmsy/m/n/10.95 g\OT1/ptm/b/n/10.53937 . Above each ta-ble, there should be
+ a brief
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 442--444
+\OT1/ptm/b/n/10.53937 ti-tle de-scrib-ing its con-tents. Ti-tle for-mat should
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 442--444
+\OT1/ptm/b/n/10.53937 stan-dards of er-ror anal-y-sis, should be in-cluded
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 442--444
+\OT1/ptm/b/n/10.53937 in foot-notes. Ta-bles are re-ferred to in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
+
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 445--447
+\OT1/ptm/b/n/10.53937 EQUATIONS. The font is Times New Ro-man
+ []
+
+- LAST -
+Extra skip:13.69693pt
+Left:297.63553pt/2.14467pt
+Right:283.9386pt/2.14467pt
+Output:297.63553pt
+[6
+
+
+] (./TST_template_tex(2013-NO3).aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.48314pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 111 ({)
+### bottom level
+(\end occurred when \ifx on line 161 was incomplete) 
+Here is how much of TeX's memory you used:
+ 5262 strings out of 493591
+ 75095 string characters out of 6143545
+ 151339 words of memory out of 5000000
+ 8545 multiletter control sequences out of 15000+600000
+ 20226 words of font info for 62 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 42i,12n,43p,1632b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on TST_template_tex(2013-NO3).pdf (6 pages).
