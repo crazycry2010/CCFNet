@@ -256,33 +256,27 @@ Inspired by online hard example mining(OHEM) algorithm, we propose a cascade coa
 \label{s:feature}
 \noindent
 
-We choose ResNet-50 which is pre-trained on ImageNet as our feature extractor. ResNet originally is designed for image classification which win ILSRVC 2015 competition and surpass the human performance on ImageNet dataset which is cap
-ResNet-50 is one of the version provided in experiments, which is faster than VGG-16 and more accurate than VGG-19.
-Compared with ResNet-101, ResNet-50 is cheaper in computation resources and memory consumption, but can achieve a comparable accuracy.
-Figure~\ref{f:arch}a  visualizes the network architecture of ResNet-50, which is composed by five stages with different configurations of layers and a classification stage.
-We treat the ResNet-50 as a common feature extraction part of CCFNet by discarding the classification stage.
+We choose ResNet-50 which is pre-trained on ImageNet as our feature extractor. ResNet originally is designed for image classification which won ILSRVC 2015 competition and surpass the human performance on ImageNet dataset. It has superb capacities of extracting hierarchical representations. Considering the computation resources and memory consumption, we choose ResNet-50 rather than ResNet-101, but it can still achieve comparable accuracy. In Figure \ref{fig2}, the hexahedron presents the feature extractor. Although we just use this simplified figure to present the ResNet-50, it is composed by five stages with different configurations of layers and a classification stage. The building block of ResNet can be defined as:
 
+\begin{equation}\label{equ1}
+\setlength\abovedisplayskip{4pt}
+\setlength\belowdisplayskip{4pt}
+\begin{split}
+y = F(x, \{W_{i}\}) + x \\
+\end{split}
+\end{equation} 
+where $x$ and $y$ denote the input and output of a layer. The function $F(x, \{W_{i}\})$ indicates the residual mapping while the $W_{i}$ represents a group of learnable weights. The operation $F + x$ is performed by a shortcut connection and element-wise which in fact combine the features of multi-scale. It benefits the segmentation task a lot. For semantic segmentation task,  the context is important to predict the correct label of each pixel instance. But it is difficult to determine the boundary of each pixel, since different objects may have different contours. The problem gets more complicated when considering the various perspective of each images. A simple yet effective method to solve this problem is to integrate multi-scale features for label predicting. Consequently, the residual error model itself has the property of extracting and integrating multi-scale features, which can be seen from Equation \ref {equ1}. From the unravelled view by Veit et al.~\ref{}, a two-unit ResNet is equivalent to an ensemble of four sub-networks with different receptive fields. So the whole ResNet-50 can be expanded as a linearly growing ensemble of sub-networks, which can extract and integrate multi-scale features.
+
+Besides, there are two improvements adopted by ResNet-50 to make it more suitable for segmentation task. First, we only keep the first three pooling layers in order to preserve the resolution. So the final resolution of the prediction is 1/8 of the original input image. Secondly, we replace the convolutional layer in the last two stages with the dilated convolutions. It can help to enlarge the reception field of predicted feature maps.
+
+
+
+\subsection{A Cascade Coarse to Fine Achitecture}
+\label{s:ccfnet}
+\noindent
 
 The architecture of CCFNet is shown as Fig.~\ref{f:arch}b, which is composed by three cascade network branches: a coarse segmentation branch as a baseline result, an attention branch to predict the difficulty of labeling each pixel instance, and a refine segmentation branch to refine the final segmentation results. 
 These three branches share a common feature extraction network.
-
-\textbf{The feature extraction network} is a fundamental convolutional neural network.
-A modified version of ResNet-50 is adopted by this paper.
-For semantic segmentation task,  the context is important to predict the correct label of each pixel instance.
-But it is difficult to determine the boundary of each pixel's context, since different objects may have different sizes.
-And the problem gets more complicated when considering the various perspective of each images.
-A simple yet effective method to solve this problem is to integrate multi-scale features for label predicting.
-The residual error model itself has the property of extracting and integrating multi-scale features, which can be seen from Fig.~\ref{}.
-From the unravelled view by Veit et al.~\ref{}, a two-unit ResNet is equivalent to an ensemble of four sub-networks with different receptive fields , as illustrated in Fig. ~\ref{}.
-So the whole ResNet-50 can be expanded as a linearly growing ensemble of sub-networks, which can extract and integrate multi-scale features.
-
-Besides, there are two improvements adopted by ResNet-50 to make it more suitable for segmentation task.
-First, we only keep the first three pooling layers to preserve the resolution.
-So the final resolution of prediction is 1/8 of the original input image. 
-Secondly, we replace the convolutional layer in the last two stages with the dilated convolutions.
-It can help to enlarge the reception field of predicted feature maps.
-The modified ResNet-50 is used as feature extraction network in CCFNet.
-
 \textbf{The coarse segmentation branch} is a baseline model for image semantic segmentation.
 This branch is shown as the red part in Fig.~\ref{f:arch} b which is trained to handle easy and confident regions. We adopt a fully convolutional network(FCN) with two convolutional layers to predict the semantic classes for their regions. 
 Since the resolution is 1/8 of the original input image, the feature maps are up-sampled by bilinear interpolation.
@@ -314,11 +308,6 @@ The three branches are cascaded one by one, and constitute an end-to-end learnin
 %The simplest method to improve the segmentation result is by applying a reclassification for the difficult pixel instances.
 %But an unbalanced sample distribution go against the convergence of the reclassification network.
 %So we propose an end-to-end learning branch, the refine segmentation branch, to learn the final segmentation result directly.
-
-
-\subsection{Attention to Difficulty Pixels}
-\label{s:attention}
-\noindent
 
 
 Hard example mining is one of the commonly used training techniques for machine learning.
