@@ -25,7 +25,7 @@
 
 %===============================%
 \headevenname{\zihao{-5}{\textbf{\emph{Tsinghua Science and Technology, June}}} 2013, 18(3): 000-000}%
-\headoddname{{\sf Wang Zhenyang et al.:}\quad {\textbf{\emph{Attention to Difficult Instances: A Cascade Coarse to Fine Network Architecture for Semantic Segmentation}}}}%
+\headoddname{{\sf Wang Zhenyang et al.:}\quad {\textbf{\emph{A Cascade Coarse to Fine Network Architecture for Semantic Segmentation}}}}%
 %footnote use of *
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\upcite}[1]{\superscript{\textsuperscript{\cite{#1}}}}
@@ -123,7 +123,7 @@ J\hspace{0.8pt}u\hspace{0.8pt}n\hspace{0.8pt}e%
 \begin{strip}
 {\center \vskip 3mm
 {\zihao{3}\textbf{
-Attention to Difficult Pixels: A Cascade Coarse to Fine Network Architecture for Semantic Segmentation
+A Cascade Coarse to Fine Network Architecture for Semantic Segmentation
 }}
 \vskip 9mm}
 
@@ -137,6 +137,7 @@ Wang Zhenyang, Deng Zhidong$^*$, and Wang Shiyao
 %3.~School of Electronic Engineering Naval University of Engineering, Wuhan 430033, China\\
 %}}}
 %
+
 %\vskip 5mm
 
 \centering{
@@ -146,7 +147,8 @@ Wang Zhenyang, Deng Zhidong$^*$, and Wang Shiyao
 \linespread{1.6667} %
 \noindent
 \bf{Abstract:} {\sf
-Scene labeling, based on semantic segmentation, is a fundamental topic in computer vision. The goal is to assign each pixel in the image a category label. Recently, convolutional neural networks have attracted increasing attention on semantic segmentation due to the capabilities of extracting hierarchical features. Since it is required to make dense predictions for each pixel, a simple network is hardly to obtain considerable performances on different scenes. In this paper, we propose a cascade coarse to fine network architecture, which aims to pay more attention to the difficult pixels. The network has three branches. The first branch is responsible for handling easier regions by producing coarse predictions. And the second branch learns to distinguish the relatively difficult pixels from the entire images. Subsequently, a few hard regions will be fed to the last branch in order to make further predictions which is help to improve the final performance. All above branches focus on their own objectives and collaboratively learn to predict from coarse to fine inference. In order to evaluate predicting performance of the proposed network, we conduct experiments on two public datasets including Sift Flow and Stanford Background Dataset. We show that the three branches can be trained in an end-to-end manner and the experimental results show that compared to all existing models, our CCFNet consistently yields the best performance, with accuracy of 91.6\% and 89.7\%, respectively.
+Semantic segmentation, also know as scene labeling, is a fundamental topic in computer vision. The goal is to assign a category label to each pixel of the image . Recently, convolutional neural networks have attracted increasing attention on semantic segmentation due to the capabilities of extracting hierarchical features. Since it is required to make dense predictions for each pixel, a simple network is hardly to obtain considerable performances on different scenes. In this paper, we propose a cascade coarse to fine network architecture, which aims to pay more attention to the difficult pixels. There are three branches in the overall network. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the prediction results are refined by a weighted summation of the coarse and fine segmentation results, with the weighting coefficient predicted from the second branch.
+All above branches focus on their own objectives and collaboratively learn to predict from coarse to fine inference. In order to evaluate predicting performance of the proposed network, we conduct experiments on two public datasets including Sift Flow and Stanford Background Dataset. We show that the three branches can be trained in an end-to-end manner and the experimental results show that compared to all existing models, our CasNet consistently yields the best performance, with accuracy of 91.6\% and 89.7\%, respectively.
 }
 \vskip 4mm
 \noindent
@@ -191,15 +193,13 @@ To whom correspondence should be addressed. \\
 \label{s:introduction}
 \noindent
 
-Semantic segmentation has a strong application requirement in the field of environment perception and autonomous self driving car. The goal of semantic segmentation is to identify and assign each pixel in the image a category label which requires a complete understanding of the semantic information of the entire image. In recent years, deep learning has made breakthroughs in image classification\upcite{1,2,3}, speech recognition\upcite{4}, object detection\upcite{5} and so on. For the task of image semantic segmentation, there are also many methods based on deep learning methods. Early research attempts to apply the convolution neural network designed for image recognition directly to semantic segmentation. Although good segmentation results are obtained, the prediction results are rough and the edges of objects  can not be separated correctly. This is mainly cased by the losing of location information. Consequently, a fully convolutional neural network is proposed by to overcome this disadvantage that becomes the most popular segmentation framework for this task.
+Semantic segmentation has a strong application requirement in the field of environment perception and autonomous self driving car. The goal of semantic segmentation is to identify and assign each pixel in the image a category label which requires a complete understanding of the context of the entire image. In recent years, deep learning has made great breakthroughs in computer vision tasks, such as image classification\upcite{1,2,3}, speech recognition\upcite{4}, object detection\upcite{5}. For the task of image semantic segmentation, there are also many methods based on deep learning methods. Early research attempts to apply CNNs designed for image recognition directly to semantic segmentation. Although good segmentation results are obtained, the prediction results are rough and the edges of objects are difficult to separate correctly. This is mainly cased by the losing of location information. Consequently, a fully convolutional neural network\upcite{21} is proposed to overcome this disadvantage that becomes the most popular segmentation framework for semantic segmentation task.
 
-Besides, in order to solve the problem of edge blur, conditional random field, Markov random field, Gaussian conditional random field, and other variations are proposed. However, with the development of CNN modules, especially the batch normalization\upsite{6} and ResNet\upcite{7}, an end-to-end training procedure can achieve the same or even a better segmentation results.
+Firstly, in order to solve the problem of edge blur, conditional random field, Markov random field, Gaussian conditional random field, and other variations are proposed. However, with the development of CNN modules, especially the batch normalization\upsite{6} and ResNet\upcite{7}, an end-to-end training procedure can achieve the same or even better segmentation results.
 
-In addition, the unbalance of the easy and difficulty pixels can also wreck the convergence of the network. Aiming to  deal with the unbalanced distribution, we propose a novel semantic segmentation network framework based on the hard negative example mining.
+Secondly, the unbalance of the easy and difficult pixels can also wreck the convergence of the network. Aiming to deal with the problem of unbalanced distribution, we propose a novel semantic segmentation network framework, which is inspired by hard negative example mining. In fact, hard negative mining is not a new concept. As early as 1994, Sung and Poggio~\upcite{31} proposed bootstrapping method in their face detection algorithm. The main purpose is to enhance the detection capacity by changing the distribution of difficult samples. Inspired by a similar idea, a cascade coarse to fine network architecture, CasNet for short, is proposed. CasNet is composed by three branches which share a same feature extraction network. The first branch is a coarse segmentation network which is able to handle the easy and confident regions. The second branch is an attention network used to predict the probability of being a hard example for each pixel. For these difficult pixels, the third segmentation branch is proposed to refine the segmentation results of these difficult pixels. 
 
-In fact, hard sample mining is not a new concept. As early as 1994, Sung and Poggio proposed bootstrapping method in their face detection algorithm. The main purpose is to enhance the algorithm's capacity by changing the distribution of difficult samples. Inspired by the similar ideas, a cascade coarse to fine network architecture(CCFNet) is proposed. CCFNet is composed by three branches which share a same feature extraction network. The first branch is a coarse segmentation network which is able to handle the easy and confident regions. The second branch is an attention network used to predict the probability of being a hard example for each pixel. For these difficult pixels, the third segmentation branch is proposed to refine the final results. The proposed CCFNet uses a multi-branch network structure, integrating the prediction from two different branches with an attention module to obtain the final segmentation results.
-
-In conclusion, we propose a cascade coarse to fine network architecture for semantic segmentation. Compared with the traditional semantic segmentation networks, CCFNet has the following characteristics: 
+In conclusion, we propose a cascade coarse to fine network architecture for semantic segmentation. Compared with the traditional semantic segmentation networks, CasNet has the following characteristics: 
 
 
 \begin{figure}
@@ -217,13 +217,13 @@ In conclusion, we propose a cascade coarse to fine network architecture for sema
   $\bullet$ Incorporate the idea of hard mining into an attention module.
   
 \noindent
-  $\bullet$ Validate CCFNet on both Sift Flow Dataset\upcite{8} and Stanford Background Dataset\upcite{9}.
+  $\bullet$ Validate CasNet on both Sift Flow\upcite{8} and Stanford Background\upcite{9} datasets.
 
 
 \section{Related Works}
 \label{s:Related}
 \noindent
-Semantic segmentation aims to relate one semantic class (road, water, sea etc.) to each pixel of the input image. Both the global and local features have great impacts on the final performance of this task. Consequently, in terms of feature representations, the mainstream approaches can be divided into traditional hand-craft features and deep features based on deep neural networks. 
+Semantic segmentation aims to relate an unique semantic class (road, water, sea etc.) to each pixel of the input image. Both the global and local features have great impacts on the final performance of this task. Consequently, in terms of feature representations, the mainstream approaches can be divided into traditional hand-craft features and deep features based on deep neural networks. 
 
 In recent years, traditional methods have obtained several solutions on image segmentation. Considering the context information, several methods rely on MRF, CRF or other types of graphical models to ensure consistency of labeling\upcite{10,11,12}. Besides, most methods employ pre-segmentation in order to produce super-pixels or segmented candidates, and extract features from these individual segments along with the combinations of adjacent segments.
 \begin{figure*}[!ht]
@@ -233,10 +233,10 @@ In recent years, traditional methods have obtained several solutions on image se
 \label{fig2}
 \end{figure*} 
 
-Meanwhile, the neural networks, particularly the convolutional neural networks that yield hierarchies of features have achieved great progress in  this pixel-level prediction tasks. [13] is the first work that use CNNs for this semantic segmentation. They propose a multi-scale convolution neural network, which extracts the feature representations from different scales of local regions. The experimental results show that the network has capacities of learning texture, shape and domain information implicitly, and achieves better performance than traditional hand-craft features. In addition, the network is also able to generalized to the RGB-D images\upcite{14}. To ensure a good visual coherence and a high class accuracy, [15] propose a method to capture long range (pixel) label dependencies in images. They use a recurrent architecture for convolutional neural networks to capture a long range label dependency while keeping a tight control over the capacity. The procedure is based on supervised deep learning strategies. [16-18] train the parametric CNNs by sampling image patches, which speeds up the training time dramatically. However, they find that patch-based CNNs suffer from local ambiguity problems. [16] estimate the global potential in a non-parametric framework and propose a large margin based CNN metric for better global potential estimation. [17,18] introduce quaddirectional 2D Recurrent Neural Networks to model the long range dependencies among pixels which is able to embed the global image context into the compact local representation and significantly enhance their discriminative power.
+Meanwhile, the neural networks, particularly the CNNs that yield hierarchies of features have achieved great progress in  this pixel-level prediction task. \cite{13} is the first work that use CNNs for this semantic segmentation. They propose a multi-scale convolution neural network, which extracts the feature representations from different scales of local regions. The experimental results show that the network has capacities of learning texture, shape and domain information implicitly, and achieves better performance than traditional hand-craft features. In addition, the network is also able to generalized to the RGB-D images\upcite{14}. To ensure a good visual coherence and a high class accuracy, \cite{15} propose a method to capture long range (pixel) label dependencies in images. They use a recurrent architecture of CNNs to capture a long range label dependency while keeping a tight control over the capacity. The procedure is based on supervised deep learning strategies. \cite{16-18} train the parametric CNNs by sampling image patches, which speeds up the training time dramatically. However, they find that patch-based CNNs suffer from local ambiguity problems. \cite{16} estimate the global potential in a non-parametric framework and propose a large margin based CNN metric for better global potential estimation. \cite{17,18} introduce quaddirectional 2D Recurrent Neural Networks to model the long range dependencies among pixels which is able to embed the global image context into the compact local representation and significantly enhance their discriminative power.
 
 
-At the same time, the researchers attempt to use the pre-trained convolution neural networks for semantic segmentation. [19] obtain the local and proximal features by using the ConvNet while distant and global features are produced from Alex-net\upcite{20}. These above features are further aggregated to predict the categories. Differ from these methods, [21] present a fully convolutional network which is able to take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. They use the CNNs trained on ImageNet as a feature extractor and transfer their learned representations by fine-tuning on the task-specific datasets. [22] propose deep networks by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF). The fully connected pairwise CRF has an ability to capture fine edge details which boosts the final performance. In [23], it presents that the main problem of the current FCN-btased models is lack of the use of global context to help to make decision. They exploit the capability of global context information by different-region-based context aggregation through a pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet).
+	At the same time, researchers attempt to use the pre-trained CNNs for semantic segmentation. \cite{19} obtain the local and proximal features by using the ConvNet while distant and global features are produced from Alex-net\upcite{20}. These above features are further aggregated to predict the categories. Differ from these methods, \cite{21} present a fully convolutional network which is able to take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. They use the CNNs trained on ImageNet as a feature extractor and transfer their learned representations by fine-tuning on the task-specific datasets. \cite{22} propose deep networks by combining the responses at the final DCNN layer with a fully connected CRF. The fully connected pairwise CRF has an ability to capture fine edge details which boosts the final performance. In \cite{23}, it presents that the main problem of the current FCN-based models is lack of the incorprating  of context information. They exploit the capability of global context information by different-region-based context aggregation through a pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet).
 
 
 
@@ -245,18 +245,14 @@ At the same time, the researchers attempt to use the pre-trained convolution neu
 \noindent
 
 
-Inspired by online hard example mining(OHEM) algorithm, we propose a cascade coarse to fine network architecture CCFNet. The framework of the proposed CCFNet is shown in Figure \ref{fig2}. Given an image, we first employ a fully convolutional neural networks to extract the representations of this image. Then, the proposed CCFNet will be exploited to learn the task-specific objective. In the following subsection, Section~\ref{s:feature} illustrates how to apply a ImageNet pre-trained model to extract the representations of the given image and Section~\ref{s:ccfnet} provides the detailed information of the cascade coarse to fine semantic segmentation network, particularly the three branches which are expected to collaboratively learn to predict from coarse to fine.
+Inspired by online hard example mining(OHEM) algorithm, we propose a cascade coarse to fine network architecture CasNet. The framework of the proposed CasNet is shown in Figure~\ref{fig2}. Given an image, we first employ a ResNet to extract feature representation of this image. Then, the proposed CasNet will be exploited to learn the task-specific objective. In the following subsection, Section~\ref{s:feature} illustrates how to apply a ImageNet pre-trained model to extract feature representation of the given image. At last, Section~\ref{s:ccfnet} provides the detailed information of the cascade coarse to fine semantic segmentation network, particularly the three branches which are expected to collaboratively learn to predict from coarse to fine.
 
-%The idea behind is  simple yet effective. 
-%The segmentation datasets contain a large number of easy examples and a small number of hard examples.
-%Paying more attention on these hard examples can make the training 
-%Pay much more attention on these hard examples 
 
 \subsection{The feature extraction network}
 \label{s:feature}
 \noindent
 
-We choose ResNet-50 which is pre-trained on ImageNet as our feature extractor. ResNet originally is designed for image classification which won ILSRVC 2015 competition and surpass the human performance on ImageNet dataset. It has superb capacities of extracting hierarchical representations. Considering the computation resources and memory consumption, we choose ResNet-50 rather than ResNet-101, but it can still achieve comparable accuracy. In Figure \ref{fig2}, the hexahedron presents the feature extractor. Although we just use this simplified figure to present the ResNet-50, it is composed by five stages with different configurations of layers and a classification stage. The building block of ResNet can be defined as:
+We choose ResNet-50 which is pre-trained on ImageNet as our feature extractor. ResNet originally is designed for image classification which won ILSRVC 2015 competition and surpass the human performance on ImageNet dataset. It has super capacities of extracting hierarchical representations. Considering the computation resources and memory consumption, we choose ResNet-50 rather than ResNet-101, but it can still achieve comparable accuracy. In Figure \ref{fig2}, the hexahedron presents the feature extractor. Although we just use this simplified figure to present the ResNet-50, it is composed by five stages with different configurations of layers and a classification stage. The building block of ResNet can be defined as:
 
 \begin{equation}\label{equ1}
 \setlength\abovedisplayskip{4pt}
@@ -541,6 +537,9 @@ Singh G, Kosecka J. Nonparametric scene parsing with adaptive feature relevance 
 
 \bibitem[30]{30}
 Liang M, Hu X. Recurrent convolutional neural network for object recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3367-3375.
+
+\bibitem[31]{31}
+Sung, K-K., and Tomaso Poggio. "Example-based learning for view-based human face detection." IEEE Transactions on pattern analysis and machine intelligence 20.1 (1998): 39-51.
 
 \begin{strip}
 \end{strip}
