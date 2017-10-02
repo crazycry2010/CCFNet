@@ -278,7 +278,7 @@ These three branches share a common feature extraction network while focus on th
 \label{s:cbb}
 \noindent
 
-The coarse segmentation branch is a baseline model for semantic segmentation which is on the first row in Figure~\ref{fig2}. We adopt a FCN that consisted of two convolutional layers to predict the semantic classes for relatively easy and confident regions. Since the resolution is 1/8 of the original input image, the feature maps are up-sampled by bilinear interpolation. Finally, a pixel-wise softmax loss is adopted to predict the probabilities of each pixel.
+The coarse segmentation branch is a baseline model for semantic segmentation which is on the first row in Figure~\ref{fig2}. We adopt a FCN that consisted of two convolutional layers to predict the semantic classes for relatively easy and confident regions. Since the resolution is 1/8 of the original input image, the feature maps are up-sampled by bilinear interpolation. Finally, a pixel-wise softmax loss is adopted to predict the probabilities of each pixel. We first formulate the coarse segmentation branch which produces the probability map as Equation \ref{equ2}, and the loss function is also defined as Equation \ref{equ3}: 
 \begin{equation}\label{equ2}
 \setlength\abovedisplayskip{8pt}
 \setlength\belowdisplayskip{8pt}
@@ -293,6 +293,10 @@ p_{c}(i,j) &= \mathcal{F}_{coarse}(I, \mathcal{W}_c)\\
 \mathcal{L}_{coarse}(y, p_c) &= - \frac{1}{N}[\sum_{(i,j)\in I}\log(p^{y(i,j)}_c(i,j))]\\
 \end{split}
 \end{equation} 
+where $(i,j)$ is the pixel's location of an input image $I$. $ \mathcal{F}_{coarse}$ represents the coarse segmentation branch with the trainable weights $ \mathcal{W}_c$. And the $p_{c}(i,j)$ denotes the computed probability of each pixel. Particularly, the $p_{c}(i,j)$ in Equation \ref{equ2} is a $K$ dimensional vector (whose elements sum to 1) that represents the estimated probability of the class label taking on each of the $K$ different possible values while the $p^{y(i,j)}_c(i,j)$ in Euation \ref{equ3} is account for the estimated probability of ground truth category $y(i,j)$. So the  Equation \ref{equ3} shows the standard $softmax$ loss which accumulates the loss of each pixels and then is averaged by the number of pixels $N$. 
+
+Equation \ref{equ2} and \ref{equ3} allow to train the coarse segmentation branch and produce a coarse prediction results that is useful for the following two branches.
+
 
 \subsubsection{The Attention Branch}
 \label{s:ab}
@@ -320,7 +324,7 @@ p_{a}(i,j) = \mathcal{F}_{attention}(I, \mathcal{W}_a)\\
 \begin{split}
 \hat{y}(i,j) = 
 \begin{cases}
-1, &\arg\underset{k \in \mathcal{K}}{\max}\,p_{a}^k(i,j)=y(i,j)\\
+1, &\arg\underset{k \in \mathcal{K}}{\max}\,p_{c}^k(i,j)=y(i,j)\\
 0, &otherwise
 \end{cases}
 \end{split}
@@ -332,6 +336,8 @@ p_{a}(i,j) = \mathcal{F}_{attention}(I, \mathcal{W}_a)\\
 \mathcal{L}_{attention}(\hat{y}, p_a) = - \frac{1}{N}[\sum_{(i,j)\in I}log(p^{\hat{y}(i,j)}_a(i,j))]\\
 \end{split}
 \end{equation}
+where $\hat{y}$ is the pixel-wise binary label of the input image, and 1 and 0 are the positive and negative labeled pixels. K is the number of instances
+where β is the percentage of non-edge pixels in the image to account for skewness of sample numbers, 
 
 %The attention branch is proposed to learn a soft-attention, which is a one-channel feature map with the same resolution as the input image. It is mainly used to indicate the segment difficulty of each pixel. The idea behind is simple yet effective. 
 
@@ -353,26 +359,29 @@ The three branches are cascaded one by one, and constitute an end-to-end learnin
 \setlength\abovedisplayskip{8pt}
 \setlength\belowdisplayskip{8pt}
 \begin{split}
-p_{r}(i,j) = \mathcal{F}_{refine}(I, \mathcal{W}_r)\\
+p_{f}(i,j) = \mathcal{F}_{fine}(I, \mathcal{W}_f)\\
 \end{split}
 \end{equation}
 \begin{equation}\label{equ8}
 \setlength\abovedisplayskip{8pt}
 \setlength\belowdisplayskip{8pt}
 \begin{split}
-p_{weighted}(i,j) &= p_{a}(i,j) \cdot p_{c}(i,j)\\
-&+ (1-p_{a}(i,j)) \cdot p_{r}(i,j)\\
+p_{refine}(i,j) &= p_{a}(i,j) \cdot p_{c}(i,j)\\
+&+ (1-p_{a}(i,j)) \cdot p_{f}(i,j)\\
 \end{split}
 \end{equation}
 \begin{equation}\label{equ9}
 \setlength\abovedisplayskip{8pt}
 \setlength\belowdisplayskip{8pt}
 \begin{split}
-\mathcal{L}_{refine}(y, p_{weighted}) = - \frac{1}{N}[\sum_{(i,j)\in I}log(p^{y(i,j)}_{weighted}(i,j))]\\
+\mathcal{L}_{refine}(y, p_{refine}) = - \frac{1}{N}[\sum_{(i,j)\in I}log(p^{y(i,j)}_{refine}(i,j))]\\
 \end{split}
 \end{equation}
 
-
+Finally, 6 loss functions are
+computed on {A(1)
+, . . . , A(6)} using the Equation 1 to provide
+deep supervision to this network.
 
 
 \begin{figure*}[ht]
