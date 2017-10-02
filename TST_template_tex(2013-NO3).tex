@@ -295,7 +295,7 @@ p_{c}(i,j) &= \mathcal{F}_{coarse}(I, \mathcal{W}_c)\\
 \end{equation} 
 where $(i,j)$ is the pixel's location of an input image $I$. $ \mathcal{F}_{coarse}$ represents the coarse segmentation branch with the trainable weights $ \mathcal{W}_c$. And the $p_{c}(i,j)$ denotes the computed probability of each pixel. Particularly, the $p_{c}(i,j)$ in Equation \ref{equ2} is a $K$ dimensional vector (whose elements sum to 1) that represents the estimated probability of the class label taking on each of the $K$ different possible values while the $p^{y(i,j)}_c(i,j)$ in Euation \ref{equ3} is account for the estimated probability of ground truth category $y(i,j)$. So the  Equation \ref{equ3} shows the standard $softmax$ loss which accumulates the loss of each pixels and then is averaged by the number of pixels $N$. 
 
-Equation \ref{equ2} and \ref{equ3} allow to train the coarse segmentation branch and produce a coarse prediction results that is useful for the following two branches.
+Equation \ref{equ2} and \ref{equ3} allow to train the coarse segmentation branch and produce the coarse prediction results that are useful for the following two branches.
 
 
 \subsubsection{The Attention Branch}
