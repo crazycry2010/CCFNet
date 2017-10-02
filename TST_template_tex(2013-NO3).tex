@@ -334,9 +334,9 @@ During the training process, the attention branch is supervised by a label map w
 \mathcal{L}_{attention}(\hat{y}, p_a) = - \frac{1}{N}[\sum_{(i,j)\in I}log(p^{\hat{y}(i,j)}_a(i,j))]\\
 \end{split}
 \end{equation}
-where $\hat{y}$ is the pixel-wise binary label. $\arg\underset{k \in \mathcal{K}}{\max}\,p_{c}^k(i,j)$ denotes the category which holds the maximum estimated probability among all the categories $\mathcal{K}$. If this category is equal to the ground truth, positive value $1$ will be assigned to $\hat{y}$, indicating that this pixel is correctly predicted by coarse segmentation branch. Otherwise, $0$ will be the new label of this pixel that represents it is difficult for coarse branch.
+where $\hat{y}$ is the pixel-wise binary label. $\arg\underset{k \in \mathcal{K}}{\max}\,p_{c}^k(i,j)$ denotes the category which holds the maximum estimated probability among all the categories $\mathcal{K}$. If this category is equal to the ground truth, positive value $1$ will be assigned to $\hat{y}$, indicating that this pixel is correctly predicted by coarse segmentation branch. Otherwise, $0$ will be the new label of this pixel that represents it is difficult for coarse branch. The prediction of attention will be the important ratio used for generating the final prediction of the following refine segmentation branch.
 
-During the testing process, the attention branch heuristically filter out the hard examples online.
+During the testing process, the attention branch heuristically filter out the hard examples online as well.
 
 %The attention branch is proposed to learn a soft-attention, which is a one-channel feature map with the same resolution as the input image. It is mainly used to indicate the segment difficulty of each pixel. The idea behind is simple yet effective. 
 
@@ -348,17 +348,15 @@ During the testing process, the attention branch heuristically filter out the ha
 \label{s:rsb}
 \noindent
 
-The refine segmentation branch is cascaded behind the coarse and the attention as shown on the third row in Figure~\ref{fig2}. This branch is more complicated compared with the first two branches. It contains a fine segmentation network and a weighted summation of unit to refine the final segmentation results.
+The refine segmentation branch is cascaded behind the coarse and the attention as shown on the third row in Figure~\ref{fig2}. This branch is more complicated compared with the first two branches. It contains a fine segmentation network $\mathcal{F}_{fine}$ in Equation \ref{equ7} and a weighted summation of unit $p_{refine}(i,j)$ in Equation \ref{equ8} to refine the final segmentation results.
 
 Since the coarse segmentation branch is hard to segment all the pixels correctly, the pixel which can be segment correctly by the coarse segmentation branch is denote as easy pixel instances, while the others are difficult ones.
 A fine segmentation network is introduced to focus on reclassification of the difficult pixel instances. Inspired by the PSPNet~\upcite{21}, pyramid pooling is adopted by the fine segmentation network to extract multi-scale features. And the final segmentation results is a weighted summation of the coarse segmentation branch and the fine segmentation network, with the weighting coefficient predicted by the attention branch. The final segmentation results relay more on the coarse segmentation branch if the pixel is predicted as an easy one. Otherwise, the fine segmentation network takes up a larger proportion. 
-
-The three branches are cascaded one by one, and constitute an end-to-end learning network with multiple loss functions.
 \begin{equation}\label{equ7}
 \setlength\abovedisplayskip{8pt}
 \setlength\belowdisplayskip{8pt}
 \begin{split}
-p_{f}(i,j) = \mathcal{F}_{fine}(I, \mathcal{W}_f)\\
+p_{f}(i,j) = \mathcal{F}_{fine}(x, \mathcal{W}_f)\\
 \end{split}
 \end{equation}
 \begin{equation}\label{equ8}
@@ -376,11 +374,9 @@ p_{refine}(i,j) &= p_{a}(i,j) \cdot p_{c}(i,j)\\
 \mathcal{L}_{refine}(y, p_{refine}) = - \frac{1}{N}[\sum_{(i,j)\in I}log(p^{y(i,j)}_{refine}(i,j))]\\
 \end{split}
 \end{equation}
+where $p_{f}(i,j)$ is the prediction result produced by fine segmentation network $\mathcal{F}_{fine}$ and parameters $\mathcal{W}_f$. After obtaining coarse prediction, fine prediction and the attention results, the $p_{refine}(i,j)$ is formulated in Equation \ref{equ8} which is the weighted  summation of the coarse prediction $p_{c}(i,j)$ and fine prediction $p_{f}(i,j)$. $p_{a}(i,j)$ is obtained by attention branch which means that if the pixel has high probability of being an easy instance, we will assign higher weight to the coarse prediction, otherwise pay more attention to the results of fine branch. Finally, this refine prediction $p_{refine}(i,j)$ and the task labels provide deep supervision to the whole network.
 
-Finally, 6 loss functions are
-computed on {A(1)
-, . . . , A(6)} using the Equation 1 to provide
-deep supervision to this network.
+The three branches are cascaded one by one, and constitute an end-to-end learning network with multiple loss functions.
 
 
 \begin{figure*}[ht]
