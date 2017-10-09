@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.31)  22 SEP 2017 01:32
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.31)  8 OCT 2017 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -421,6 +421,18 @@ Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
 orted.
 
 ))
+
+./TST_template_tex(2013-NO3).tex:39: LaTeX Error: Command \upcite already defin
+ed.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 ...d{\upcite}[1]{\textsuperscript{\cite{#1}}}
+                                                  
+? 
 \c@assumption=\count119
 \c@definition=\count120
 \c@lemma=\count121
@@ -428,37 +440,27 @@ orted.
 \c@proposition=\count123
 \c@corollary=\count124
 
-
 LaTeX Warning: Unused global option(s):
     [10.5pt,journal].
 
-(./TST_template_tex(2013-NO3).aux
-
-LaTeX Warning: Label `fig:cc' multiply defined.
-
-
-LaTeX Warning: Label `fig:cc' multiply defined.
-
-
-LaTeX Warning: Label `fig:cc' multiply defined.
-
-)
+(./TST_template_tex(2013-NO3).aux)
 \openout1 = `TST_template_tex(2013-NO3).aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 67.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 68.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -474,68 +476,68 @@ See the caption package documentation for explanation.
 
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.03374> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 
-Overfull \hbox (18.93277pt too wide) detected at line 98
+Overfull \hbox (18.93277pt too wide) detected at line 99
 \OT1/ptm/b/n/9.03374 TSINGHUA SCIENCE AND TECHNOLOGY
  []
 
 
-Underfull \hbox (badness 10000) detected at line 111
+Underfull \hbox (badness 10000) detected at line 112
 \OT1/ptm/b/n/9.03374 I S S N []l l []1 0 0 7 - 0 2 1 4 []l l []0 ? / ? ? []l l 
 []p p ? ? ?- ? ? ?
  []
 
 
-Underfull \hbox (badness 10000) detected at line 119
+Underfull \hbox (badness 10000) detected at line 120
 \OT1/ptm/b/n/9.03374 V o l u m e 1 8, N u m b e r 3, J u n e 2 0 1 3
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16.06> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 126.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 129.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 127.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 130.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 13
-0.
+1.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 130.
+(Font)              size <10.95> substituted on input line 131.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 130.
+(Font)              size <10.95> substituted on input line 131.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 130.
+(Font)              size <10.95> substituted on input line 131.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 130.
+LaTeX Font Info:    Try loading font information for U+msa on input line 131.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 130.
+LaTeX Font Info:    Try loading font information for U+msb on input line 131.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 142
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 144
 .
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.51686> not available
-(Font)              size <5> substituted on input line 142.
+(Font)              size <5> substituted on input line 144.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.51686> not available
-(Font)              size <5> substituted on input line 142.
+(Font)              size <5> substituted on input line 144.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.51686> not available
-(Font)              size <5> substituted on input line 142.
+(Font)              size <5> substituted on input line 144.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -560,69 +562,78 @@ Output:10.0pt
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 178--179
+Underfull \hbox (badness 1635) in paragraph at lines 181--182
 []\OT1/ptm/m/n/9.03374 Wang Zhenyang, Deng Zhi-dong, Wang Shiyao are with
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.51686> not available
-(Font)              size <5> substituted on input line 179.
+(Font)              size <5> substituted on input line 182.
 
 
-Overfull \hbox (2.87111pt too wide) in paragraph at lines 175--184
+Overfull \hbox (2.87111pt too wide) in paragraph at lines 178--187
  [] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 189.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 192.
+./TST_template_tex(2013-NO3).tex:196: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.196 ...s, such as image classification\upcite{1}
+                                                  , speech recognition\upcit...
 
-Underfull \hbox (badness 7256) in paragraph at lines 193--198
-[]\OT1/ptm/m/n/10.53937 Semantic seg-men-ta-tion, also known as scene
- []
+? 
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.53937> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 205.
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 196.
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 205.
+./TST_template_tex(2013-NO3).tex:196: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.196 ...n\upcite{1}, speech recognition\upcite{2}
+                                                  , and object detection\upc...
 
+? 
+./TST_template_tex(2013-NO3).tex:196: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.196 ...upcite{2}, and object detection\upcite{3}
+                                                  . For the task of semantic...
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--206
-[]\OT1/ptm/m/n/10.53937 In re-cent years, deep learn-ing has made
- []
+? 
+./TST_template_tex(2013-NO3).tex:196: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.196 ...nvolutional neural network(FCN)\upcite{4}
+                                                   is proposed to overcome t...
 
+? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 break-throughs in im-age clas-si-fi-ca-tion, speech
- []
-
-
-Underfull \hbox (badness 3250) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 meth-ods. Early re-search at-tempts to ap-ply the
- []
-
-
-Underfull \hbox (badness 8038) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 con-vo-lu-tion neu-ral net-work de-signed for im-age
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 recog-ni-tion di-rectly to se-man-tic seg-men-ta-tion.
- []
-
-
-Underfull \hbox (badness 2753) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 Al-though good seg-men-ta-tion re-sults are ob-tained,
+Underfull \hbox (badness 2443) in paragraph at lines 196--197
+[]\OT1/ptm/m/n/10.53937 Semantic seg-men-ta-tion has a strong ap-pli-ca-tion
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 the pre-dic-tion re-sults are rough and the edges of
+Underfull \hbox (badness 1694) in paragraph at lines 196--197
+\OT1/ptm/m/n/10.53937 seg-men-ta-tion is to iden-tify and as-sign a cat-e-gory
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 199--206
-\OT1/ptm/m/n/10.53937 to over-come this dis-ad-van-tage, and be-come the
+Underfull \hbox (badness 1383) in paragraph at lines 196--197
+\OT1/ptm/m/n/10.53937 im-age. In re-cent years, deep learn-ing has made
+ []
+
+./TST_template_tex(2013-NO3).tex:198: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.198 ...ining procedure, such as ResNet\upcite{1}
+                                                  , can achieve the same or ...
+
+? 
+
+Underfull \hbox (badness 3460) in paragraph at lines 198--199
+\OT1/ptm/m/n/10.53937 vi-sual ob-jects, con-di-tional ran-dom field, Markov
  []
 
 
@@ -631,205 +642,160 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 ]
+./TST_template_tex(2013-NO3).tex:200: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.200 ...early as 1994, Sung and Poggio~\upcite{5}
+                                                   proposed bootstrapping me...
 
-LaTeX Warning: Reference `' on page 2 undefined on input line 209.
+? 
 
-
-LaTeX Warning: Reference `' on page 2 undefined on input line 209.
-
-
-Underfull \hbox (badness 4505) in paragraph at lines 208--210
-[]\OT1/ptm/m/n/10.53937 In or-der to solve the prob-lem of edge blur,
+Underfull \hbox (badness 2735) in paragraph at lines 200--201
+\OT1/ptm/m/n/10.53937 Aim-ing to deal with the prob-lem of un-bal-anced
  []
 
 
-Underfull \hbox (badness 5970) in paragraph at lines 208--210
-\OT1/ptm/m/n/10.53937 con-di-tional ran-dom field, Markov ran-dom field,
- []
-
-
-Underfull \hbox (badness 7379) in paragraph at lines 208--210
-\OT1/ptm/m/n/10.53937 are pro-posed. But with the de-vel-op-ment of
- []
-
-
-Underfull \hbox (badness 3930) in paragraph at lines 212--216
-[]\OT1/ptm/m/n/10.53937 Another chal-lenge is to si-mul-ta-ne-ously pre-dict
- []
-
-
-LaTeX Warning: Reference `' on page 2 undefined on input line 217.
-
-
-Underfull \hbox (badness 1342) in paragraph at lines 217--224
-\OT1/ptm/m/n/10.53937 As early as 1994, Sung and Pog-gio [] pro-posed
- []
-
-
-Underfull \hbox (badness 2726) in paragraph at lines 217--224
-\OT1/ptm/m/n/10.53937 by chang-ing the dis-tri-bu-tion of dif-fi-cult sam-ples.
-
- []
-
-
-Underfull \hbox (badness 1715) in paragraph at lines 229--231
+Underfull \hbox (badness 1715) in paragraph at lines 202--203
 []\OT1/ptm/m/n/10.53937 In con-clu-sion, we pro-pose a cas-cade coarse to
+ []
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 202--203
+\OT1/ptm/m/n/10.53937 Com-pared with tra-di-tional se-man-tic seg-men-ta-tion
  []
 
 File: fig1.png Graphic file (type QTm)
 <use  "fig1.png" >
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 242.
+Underfull \vbox (badness 3386) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+./TST_template_tex(2013-NO3).tex:220: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.220 ...lidate CasNet on both Sift Flow\upcite{6}
+                                                   and Stanford Background\u...
 
-
-Underfull \hbox (badness 1194) in paragraph at lines 253--255
-\OT1/ptm/m/n/10.53937 neu-ral net-works. Par-tic-u-larly, driven by pow-er-ful
- []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 257.
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
-[]\OT1/ptm/m/n/10.53937 Meanwhile, the neu-ral net-works, es-pe-cially
- []
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 con-vo-lu-tional neu-ral net-works, are widely ap-plied
- []
-
-
-Underfull \hbox (badness 1596) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 in-creas-ingly more at-trac-tive and pow-er-ful. Some
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 They pro-pose a multi-scale con-vo-lu-tion neu-ral
- []
-
-
-Underfull \hbox (badness 1152) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 net-work, which ex-tracts the fea-ture rep-re-sen-ta-tion
-s
- []
-
-
-Underfull \hbox (badness 4291) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 ar-chi-tec-ture for con-vo-lu-tional neu-ral net-works to
-
- []
-
-
-Underfull \hbox (badness 4621) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 which speeds up the train-ing time dra-mat-i-cally.
- []
-
-
-Underfull \hbox (badness 1112) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 2D Re-cur-rent Neu-ral Net-works to model the long
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 em-bed the global im-age con-text into the com-pact
- []
-
-
-Underfull \hbox (badness 1337) in paragraph at lines 258--259
-\OT1/ptm/m/n/10.53937 lo-cal rep-re-sen-ta-tion and sig-nif-i-cantly en-hance t
-heir
- []
-
-
-Underfull \hbox (badness 1043) in paragraph at lines 260--261
-\OT1/ptm/m/n/10.53937 seg-men-ta-tion. [25] ob-tain the lo-cal and prox-i-mal
- []
-
-
-Underfull \hbox (badness 2165) in paragraph at lines 260--261
-\OT1/ptm/m/n/10.53937 fea-tures by us-ing the Con-vNet while dis-tant and
- []
-
-
-Underfull \hbox (badness 1365) in paragraph at lines 260--261
-\OT1/ptm/m/n/10.53937 deep net-works by com-bin-ing the re-sponses at the
- []
-
-
-Underfull \hbox (badness 2080) in paragraph at lines 260--261
-\OT1/ptm/m/n/10.53937 that the main prob-lem of the cur-rent FCN-based
- []
-
-
-Underfull \hbox (badness 1490) in paragraph at lines 260--261
-\OT1/ptm/m/n/10.53937 with the pro-posed pyra-mid scene pars-ing net-work
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `s:hard' on page 3 undefined on input line 269.
-
-
-LaTeX Warning: Reference `s:hard' on page 3 undefined on input line 270.
-
-
-LaTeX Warning: Reference `f:arch' on page 3 undefined on input line 284.
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 280--286
-\OT1/ptm/m/n/10.53937 for im-age clas-si-fi-ca-tion which win IL-SRVC 2015
- []
-
-
-Underfull \hbox (badness 1708) in paragraph at lines 280--286
-\OT1/ptm/m/n/10.53937 ResNet-101, ResNet-50 is cheaper in com-pu-ta-tion
- []
-
-
-LaTeX Warning: File `fig2.png' not found on input line 289.
-
-./TST_template_tex(2013-NO3).tex:289: Unable to load picture or PDF file 'fig2.
-png'.
-<to be read again> 
-                   }
-l.289 ...raphics[width=0.95\columnwidth]{fig2.png}
-                                                  
+? 
+./TST_template_tex(2013-NO3).tex:220: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.220 ...cite{6} and Stanford Background\upcite{7}
+                                                   datasets.
 ? 
 
-./TST_template_tex(2013-NO3).tex:289: Package graphics Error: Division by 0.
+Underfull \hbox (badness 3861) in paragraph at lines 225--227
+\OT1/ptm/m/n/10.53937 Semantic seg-men-ta-tion aims to re-late an unique
+ []
 
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.289 ...raphics[width=0.95\columnwidth]{fig2.png}
-                                                  
+./TST_template_tex(2013-NO3).tex:228: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.228 ...sure consistency of labeling\upcite{8-10}
+                                                  . Besides, most methods em...
+
 ? 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.37752> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 228.
+
+LaTeX Warning: Citation `8-10' on page 2 undefined on input line 228.
+
 File: fig2.png Graphic file (type QTm)
 <use  "fig2.png" >
-./TST_template_tex(2013-NO3).tex:289: Unable to load picture or PDF file 'fig2.
-png'.
-<to be read again> 
-                   \GXT@clipend 
-l.289 ...raphics[width=0.95\columnwidth]{fig2.png}
-                                                  
+Underfull \hbox (badness 2600) in paragraph at lines 228--235
+\OT1/ptm/m/n/10.53937 the con-text in-for-ma-tion, sev-eral meth-ods rely on
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 228--235
+\OT1/ptm/m/n/10.53937 MRF, CRF or other types of graph-i-cal mod-els to
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 228--235
+\OT1/ptm/m/n/10.53937 en-sure con-sis-tency of labeling$[]$. Be-sides, most
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 228--235
+\OT1/ptm/m/n/10.53937 super-pixels or seg-mented can-di-dates, and ex-tract
+ []
+
+./TST_template_tex(2013-NO3).tex:236: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.236 ...eneralized to the RGB-D images\upcite{12}
+                                                  . To ensure a good visual ...
+
+? 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.53937> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 236.
+
+LaTeX Warning: Citation `14-16' on page 2 undefined on input line 236.
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 236--237
+\OT1/ptm/m/n/10.53937 great progress in this pixel-level pre-dic-tion task.
+ []
+
+
+Underfull \hbox (badness 4454) in paragraph at lines 236--237
+\OT1/ptm/m/n/10.53937 [11] is the first work that use CNNs for this
+ []
+
+
+Underfull \hbox (badness 2809) in paragraph at lines 236--237
+\OT1/ptm/m/n/10.53937 ca-pac-i-ties of learn-ing tex-ture, shape and do-main
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 237.
+ [2]
+./TST_template_tex(2013-NO3).tex:239: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.239 ...res are produced from Alex-net\upcite{18}
+                                                  . These above features are...
+
 ? 
 
-LaTeX Warning: Reference `f:arch' on page 3 undefined on input line 294.
+Underfull \hbox (badness 1521) in paragraph at lines 239--240
+\OT1/ptm/m/n/10.53937 which is able to take in-put of ar-bi-trary size and
+ []
 
 
-Overfull \hbox (25.3022pt too wide) has occurred while \output is active
- []  \OT1/phv/m/n/9.03374 Wang Zhenyang et al.: \OT1/ptm/b/it/9.03374 Attention
- to Difficult Instances: A Cascade Coarse to Fine Network Architecture for Sema
-ntic Segmentation   \OT1/ptm/m/n/9.03374 3 []
+Underfull \hbox (badness 1389) in paragraph at lines 239--240
+\OT1/ptm/m/n/10.53937 pro-duce correspondingly-sized out-put with ef-fi-cient
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 239--240
+\OT1/ptm/m/n/10.53937 learned rep-re-sen-ta-tions by fine-tuning on the task-
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 239--240
+\OT1/ptm/m/n/10.53937 specific datasets. [20] pro-pose deep net-works by
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 255--256
+[]\OT1/ptm/m/n/10.53937 We choose ResNet-50 which is pre-trained on
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 255--256
+\OT1/ptm/m/n/10.53937 on Im-a-geNet dataset. It has su-per ca-pac-i-ties of
+ []
+
+
+Underfull \hbox (badness 2277) in paragraph at lines 255--256
+\OT1/ptm/m/n/10.53937 50, it is com-posed by five stages with dif-fer-ent
  []
 
 
@@ -838,78 +804,128 @@ Overfull \hbox (1.71642pt too wide) has occurred while \output is active
  []
 
 [3]
+./TST_template_tex(2013-NO3).tex:264: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.264 ...nravelled view by Veit et al.~\upcite{22}
+                                                  , a two-unit ResNet is equ...
 
-LaTeX Warning: Reference `' on page 4 undefined on input line 303.
+? 
 
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 304.
-
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 304.
-
-
-LaTeX Warning: Reference `f:arch' on page 4 undefined on input line 315.
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 314--318
-[]\OT1/ptm/b/n/10.53937 The coarse seg-men-ta-tion branch \OT1/ptm/m/n/10.53937
- is a base-line
+Underfull \hbox (badness 1152) in paragraph at lines 263--265
+\OT1/ptm/m/n/10.53937 where $\OML/cmm/m/it/10.95 x$ \OT1/ptm/m/n/10.53937 and $
+\OML/cmm/m/it/10.95 y$ \OT1/ptm/m/n/10.53937 de-note the in-put and out-put of 
+a
  []
 
 
-Underfull \hbox (badness 2529) in paragraph at lines 314--318
-\OT1/ptm/m/n/10.53937 Since the res-o-lu-tion is 1/8 of the orig-i-nal in-put
+Underfull \hbox (badness 1231) in paragraph at lines 263--265
+\OT1/ptm/m/n/10.53937 1[]. From the un-rav-elled view by Veit et al. $[]$,
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 320--328
-\OT1/ptm/m/n/10.53937 and a small num-ber of dif-fi-culty pixel in-stances.
+Underfull \hbox (badness 1762) in paragraph at lines 266--267
+\OT1/ptm/m/n/10.53937 ResNet-50 to make it more suit-able for se-man-tic
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 336.
-
-
-Underfull \hbox (badness 8019) in paragraph at lines 330--339
-[]\OT1/ptm/b/n/10.53937 The re-fine seg-men-ta-tion branch \OT1/ptm/m/n/10.5393
-7 re-fines the
+Underfull \hbox (badness 2617) in paragraph at lines 295--297
+\OT1/ptm/m/n/10.53937 and $\OML/cmm/m/it/10.95 x$ \OT1/ptm/m/n/10.53937 is the 
+in-put fea-tures ex-tracted by fea-ture
  []
 
 
-Underfull \hbox (badness 1867) in paragraph at lines 352--356
-[]\OT1/ptm/m/n/10.53937 Hard ex-am-ple min-ing is one of the com-monly
+Underfull \hbox (badness 1715) in paragraph at lines 295--297
+\OT1/ptm/m/n/10.53937 the coarse seg-men-ta-tion branch with the train-able
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 352--356
-\OT1/ptm/m/n/10.53937 train-ing model is fixed to screen out the dif-fi-cult
- []
-
-
-Underfull \hbox (badness 1270) in paragraph at lines 357--366
-\OT1/ptm/m/n/10.53937 con-tain enough train-ing sam-ples for hard ex-am-ple
+Underfull \hbox (badness 5446) in paragraph at lines 298--299
+[]\OT1/ptm/m/n/10.53937 Equation 2[] and 3[] al-low to train the coarse
  []
 
 [4]
-File: fig3.png Graphic file (type QTm)
- <use  "fig3.png" >
-Underfull \hbox (badness 2073) in paragraph at lines 386--388
-\OT1/ptm/m/n/10.53937 plat-form Caffe[30]. The train-ing pro-ce-dure uses
+Underfull \hbox (badness 6910) in paragraph at lines 309--310
+[]\OT1/ptm/m/n/10.53937 In this pa-per, the two-step pro-cess of hard
  []
 
-File: fig4.png Graphic file (type QTm)
-<use  "fig4.png" >
-Underfull \vbox (badness 2653) has occurred while \output is active []
+
+Underfull \hbox (badness 1270) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 con-tain enough train-ing sam-ples for hard ex-am-ple
+ []
 
 
-Overfull \hbox (25.3022pt too wide) has occurred while \output is active
- []  \OT1/phv/m/n/9.03374 Wang Zhenyang et al.: \OT1/ptm/b/it/9.03374 Attention
- to Difficult Instances: A Cascade Coarse to Fine Network Architecture for Sema
-ntic Segmentation   \OT1/ptm/m/n/9.03374 5 []
+Underfull \hbox (badness 1609) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 min-ing. The at-ten-tion branch is used to pre-dict
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 the same fea-ture ex-trac-tion net-work as the coarse
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 sim-i-lar net-work struc-ture. As shown in Equa-tion
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 4[], the $\OMS/cmsy/m/n/10.95 F[]$ \OT1/ptm/m/n/10.53937 
+is the at-ten-tion branch with the
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 309--310
+\OT1/ptm/m/n/10.53937 is the shared fea-ture as Equa-tion 2[]. The ma-jor
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 318--319
+\OT1/ptm/m/n/10.53937 seg-men-ta-tion branch, so the la-bel map $[]$ can be
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 318--319
+\OT1/ptm/m/n/10.53937 gen-er-ated by a com-par-i-son be-tween the pre-dic-tion
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 336--338
+\OT1/ptm/m/n/10.53937 de-notes the cat-e-gory which holds the max-i-mum
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 339--340
+[]\OT1/ptm/m/n/10.53937 During the test-ing pro-cess, the at-ten-tion branch
+ []
+
+./TST_template_tex(2013-NO3).tex:354: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.354 ...ances. Inspired by the PSPNet~\upcite{21}
+                                                  , pyramid pooling is adopt...
+
+? 
+
+Underfull \hbox (badness 2119) in paragraph at lines 353--355
+\OT1/ptm/m/n/10.53937 are dif-fi-cult ones. A fine seg-men-ta-tion net-work
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 353--355
+\OT1/ptm/m/n/10.53937 is in-tro-duced to fo-cus on re-clas-si-fi-ca-tion of the
+
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 376--378
+\OT1/ptm/m/n/10.53937 in Equa-tion 8[] which is the weighted sum-ma-tion
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 376--378
+\OT1/ptm/m/n/10.53937 to the re-sults of fine branch. Fi-nally, this re-fine
  []
 
 
@@ -918,221 +934,159 @@ Overfull \hbox (1.71642pt too wide) has occurred while \output is active
  []
 
 [5]
-Underfull \hbox (badness 3439) in paragraph at lines 409--410
+File: fig3.png Graphic file (type QTm)
+ <use  "fig3.png" >
+Underfull \hbox (badness 2221) in paragraph at lines 391--393
+\OT1/ptm/m/n/10.53937 about the im-ple-men-ta-tion of Cas-Net. More-over,
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 395--397
+\OT1/ptm/m/n/10.53937 seg-men-ta-tion datasets, which are SIFT Flow and
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 398--399
 []\OT1/ptm/m/n/10.53937 The Stan-ford Back-ground dataset con-tains 715
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 411--412
-\OT1/ptm/m/n/10.53937 dataset. The re-sults are show in Fig-ure 3 which
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+
+./TST_template_tex(2013-NO3).tex:403: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.403 ...ased on public platform Caffe~\upcite{23}
+                                                  . The training procedure u...
+
+? 
+
+Underfull \hbox (badness 1701) in paragraph at lines 402--404
+\OT1/ptm/m/n/10.53937 plat-form Caffe $[]$. The train-ing pro-ce-dure uses
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 411--412
-\OT1/ptm/m/n/10.53937 pre-dicted by HM-Net while the last col-umn is the
+Underfull \hbox (badness 1038) in paragraph at lines 402--404
+\OT1/ptm/m/n/10.53937 The learn-ing rate is ini-tially set to 1e-4 and then
  []
 
 
-Underfull \hbox (badness 4543) in paragraph at lines 413--414
-\OT1/ptm/m/n/10.53937 the HM-Net to other seg-men-ta-tion meth-ods, the
+Underfull \hbox (badness 1024) in paragraph at lines 412--414
+[]\OT1/ptm/m/n/10.53937 During the com-par-i-son, we first con-duct sev-eral
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 413--414
-\OT1/ptm/m/n/10.53937 that HM-Net achieves an ac-cu-racy of 91.6%, and
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Underfull \hbox (badness 1117) in paragraph at lines 433--434
+\OT1/ptm/m/n/10.53937 cat-e-gory of pixel clas-si-fi-ca-tion. The ex-per-i-men-
+tal
+ []
+
+./TST_template_tex(2013-NO3).tex:445: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.445 Liu et al.\upcite{6}
+                           & 76.7 & - \\
+? 
+./TST_template_tex(2013-NO3).tex:446: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.446 Tighe et al. SVM\upcite{25}
+                                  & 75.6 & 41.4 \\
+? 
+./TST_template_tex(2013-NO3).tex:447: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.447 Tighe et al. SVM+MRF\upcite{26}
+                                      & 78.6 & 39.2 \\
+? 
+./TST_template_tex(2013-NO3).tex:448: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.448 Farabet et al. natural\upcite{11}
+                                        & 72.3 & 50.8 \\
+? 
+./TST_template_tex(2013-NO3).tex:449: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.449 Farabet et al. balanced\upcite{11}
+                                         & 78.5 & 29.6 \\
+? 
+./TST_template_tex(2013-NO3).tex:450: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.450 Pinheiro et al.\upcite{13}
+                                 & 77.7 & 29.8 \\
+? 
+./TST_template_tex(2013-NO3).tex:451: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.451 Liang et al. RCNN\upcite{24}
+                                   & 84.3 & 41.0 \\
+? 
+./TST_template_tex(2013-NO3).tex:452: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.452 Shelhamer et al. FCN-8s\upcite{4}
+                                        & 85.9 & 53.9 \\
+? 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 459--460
+\OT1/ptm/m/n/10.53937 scheme of the se-man-tic seg-men-ta-tion, we test the
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 416--418
+Underfull \hbox (badness 1189) in paragraph at lines 459--460
 \OT1/ptm/m/n/10.53937 by us-ing the same ar-chi-tec-ture and con-fig-u-ra-tions
 .
  []
 
-
-Underfull \hbox (badness 1701) in paragraph at lines 420--422
-\OT1/ptm/m/n/10.53937 iden-ti-fi-ca-tion of these dif-fi-cult pix-els is clas-s
-i-fied,
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 427--433
-\OT1/ptm/m/n/10.53937 net-work ar-chi-tec-ture. This net-work in-clude three
- []
-
-
-Underfull \hbox (badness 1163) in paragraph at lines 427--433
-\OT1/ptm/m/n/10.53937 or-der to eval-u-ate the seg-men-ta-tion per-for-mance of
-
- []
-
-
-Underfull \hbox (badness 2828) in paragraph at lines 427--433
-\OT1/ptm/m/n/10.53937 CCFNet, we con-duct ex-per-i-ments on two pub-lic
- []
-
-
-Underfull \hbox (badness 1735) in paragraph at lines 427--433
-\OT1/ptm/m/n/10.53937 datasets in-clud-ing Sift Flow Dataset and Stan-ford
- []
-
-[6]
-Underfull \hbox (badness 3635) in paragraph at lines 457--458
-[]\OT1/ptm/m/n/9.03374 Krizhevsky A, Sutskever I, Hin-ton G E. Im-a-genet
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
-\OT1/ptm/m/n/9.03374 clas-si-fi-ca-tion with deep con-vo-lu-tional neu-ral
- []
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 460--461
-[]\OT1/ptm/m/n/9.03374 Simonyan K, Zis-ser-man A. Very deep con-vo-lu-tional
- []
-
-
-Underfull \hbox (badness 3229) in paragraph at lines 460--461
-\OT1/ptm/m/n/9.03374 net-works for large-scale im-age recog-ni-tion[J]. arXiv
- []
-
-
-Underfull \hbox (badness 1221) in paragraph at lines 463--464
-[]\OT1/ptm/m/n/9.03374 Szegedy C, Liu W, Jia Y, et al. Go-ing deeper with
- []
-
-
-Underfull \hbox (badness 5711) in paragraph at lines 478--479
-[]\OT1/ptm/m/n/9.03374 He K, Zhang X, Ren S, et al. Spa-tial pyra-mid
- []
-
-
-Underfull \hbox (badness 5652) in paragraph at lines 478--479
-\OT1/ptm/m/n/9.03374 pool-ing in deep con-vo-lu-tional net-works for vi-sual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
-\OT1/ptm/m/n/9.03374 recog-ni-tion[C]//European Con-fer-ence on Com-puter
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 481--482
-\OT1/ptm/m/n/9.03374 deep net-work train-ing by re-duc-ing in-ter-nal co-vari-a
-te
- []
-
-
-Underfull \hbox (badness 5878) in paragraph at lines 484--485
-\OT1/ptm/m/n/9.03374 for im-age recog-ni-tion[C]//Proceedings of the IEEE
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 487--488
-[]\OT1/ptm/m/n/9.03374 Liu C, Yuen J, Tor-ralba A. Sift flow: Dense
- []
-
-
-Underfull \hbox (badness 2409) in paragraph at lines 487--488
-\OT1/ptm/m/n/9.03374 cor-re-spon-dence across scenes and its ap-pli-ca-tions[J]
-.
- []
-
-
-Underfull \hbox (badness 3907) in paragraph at lines 487--488
-\OT1/ptm/m/n/9.03374 IEEE trans-ac-tions on pat-tern anal-y-sis and ma-chine
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
-[]\OT1/ptm/m/n/9.03374 Gould S, Ful-ton R, Koller D. De-com-pos-ing a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
-\OT1/ptm/m/n/9.03374 scene into ge-o-met-ric and se-man-ti-cally con-sis-tent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
-\OT1/ptm/m/n/9.03374 re-gions[C]//Computer Vi-sion, 2009 IEEE 12th
- []
-
-
-Underfull \hbox (badness 2213) in paragraph at lines 499--500
-\OT1/ptm/m/n/9.03374 scene un-der-stand-ing[C]//Computer Vi-sion and Pat-tern
- []
-
-
-Underfull \hbox (badness 3189) in paragraph at lines 502--503
-[]\OT1/ptm/m/n/9.03374 Mathieu M, Henaff M, Le-Cun Y. Fast train-ing of
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 502--503
-\OT1/ptm/m/n/9.03374 con-vo-lu-tional net-works through ffts[J]. arXiv preprint
-
- []
-
-
-Underfull \hbox (badness 1308) in paragraph at lines 508--509
-[]\OT1/ptm/m/n/9.03374 Lempitsky V, Vedaldi A, Zis-ser-man A. Py-lon model
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
-\OT1/ptm/m/n/9.03374 for se-man-tic seg-men-ta-tion[C]//Advances in neu-ral
- []
-
-
-Underfull \hbox (badness 3579) in paragraph at lines 511--512
-[]\OT1/ptm/m/n/9.03374 Farabet C, Cou-prie C, Na-j-man L, et al. Learn-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
-\OT1/ptm/m/n/9.03374 hi-er-ar-chi-cal fea-tures for scene la-bel-ing[J]. IEEE
- []
-
-
-Underfull \hbox (badness 3058) in paragraph at lines 523--524
-\OT1/ptm/m/n/9.03374 neu-ral net-works for im-age la-bel-ing[J]. IEEE Sig-nal
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
-[]\OT1/ptm/m/n/9.03374 Mostajabi M, Yadol-lah-pour P, Shakhnarovich G.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
-\OT1/ptm/m/n/9.03374 Feed-for-ward se-man-tic seg-men-ta-tion with zoom-out
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
-\OT1/ptm/m/n/9.03374 fea-tures[C]//Proceedings of the IEEE Con-fer-ence
- []
-
-
-Underfull \hbox (badness 2253) in paragraph at lines 529--530
-\OT1/ptm/m/n/9.03374 on Com-puter Vi-sion and Pat-tern Recog-ni-tion. 2015:
- []
-
-
-Underfull \hbox (badness 3635) in paragraph at lines 532--533
-[]\OT1/ptm/m/n/9.03374 Krizhevsky A, Sutskever I, Hin-ton G E. Im-a-genet
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
-\OT1/ptm/m/n/9.03374 clas-si-fi-ca-tion with deep con-vo-lu-tional neu-ral
- []
-
-
-Overfull \hbox (25.3022pt too wide) has occurred while \output is active
- []  \OT1/phv/m/n/9.03374 Wang Zhenyang et al.: \OT1/ptm/b/it/9.03374 Attention
- to Difficult Instances: A Cascade Coarse to Fine Network Architecture for Sema
-ntic Segmentation   \OT1/ptm/m/n/9.03374 7 []
+./TST_template_tex(2013-NO3).tex:471: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.471 Gould et al.\upcite{7}
+                             & 76.4 & - \\
+? 
+./TST_template_tex(2013-NO3).tex:472: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.472 Tighe and Lazebnik\upcite{25}
+                                    & 77.5 & - \\
+? 
+./TST_template_tex(2013-NO3).tex:474: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.474 Eigen and Fergus\upcite{28}
+                                  & 75.3 & 66.5 \\
+? 
+./TST_template_tex(2013-NO3).tex:475: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.475 Singh and Kosecka\upcite{27}
+                                   & 74.1 & 62.2 \\
+? 
+./TST_template_tex(2013-NO3).tex:476: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.476 Lempitsky et al.\upcite{10}
+                                  & 81.9 & 72.4 \\
+? 
+./TST_template_tex(2013-NO3).tex:477: Undefined control sequence.
+\upcite #1->\superscript 
+                         {\textsuperscript {\cite {#1}}}
+l.477 Liang et al. RCNN\upcite{24}
+                                   & 83.1 & 74.8 \\
+? 
+File: fig4.png Graphic file (type QTm)
+<use  "fig4.png" >
+Underfull \hbox (badness 1087) in paragraph at lines 493--499
+\OT1/ptm/m/n/10.53937 end-to-end man-ner. And fi-nally, the ex-per-i-men-tal
  []
 
 
@@ -1141,102 +1095,231 @@ Overfull \hbox (1.71642pt too wide) has occurred while \output is active
  []
 
 [7]
-Underfull \hbox (badness 1383) in paragraph at lines 535--536
+Underfull \hbox (badness 5878) in paragraph at lines 620--621
+\OT1/ptm/m/n/9.03374 for im-age recog-ni-tion[C]//Proceedings of the IEEE
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 629--630
 []\OT1/ptm/m/n/9.03374 Long J, Shel-hamer E, Dar-rell T. Fully con-vo-lu-tional
 
  []
 
 
-Underfull \hbox (badness 1163) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+[]\OT1/ptm/m/n/9.03374 Liu C, Yuen J, Tor-ralba A. Sift flow: Dense
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 635--636
+\OT1/ptm/m/n/9.03374 cor-re-spon-dence across scenes and its ap-pli-ca-tions[J]
+.
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 635--636
+\OT1/ptm/m/n/9.03374 IEEE trans-ac-tions on pat-tern anal-y-sis and ma-chine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+[]\OT1/ptm/m/n/9.03374 Gould S, Ful-ton R, Koller D. De-com-pos-ing a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+\OT1/ptm/m/n/9.03374 scene into ge-o-met-ric and se-man-ti-cally con-sis-tent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+\OT1/ptm/m/n/9.03374 re-gions[C]//Computer Vi-sion, 2009 IEEE 12th
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 644--645
+\OT1/ptm/m/n/9.03374 scene un-der-stand-ing[C]//Computer Vi-sion and Pat-tern
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 647--648
+[]\OT1/ptm/m/n/9.03374 Lempitsky V, Vedaldi A, Zis-ser-man A. Py-lon model
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+\OT1/ptm/m/n/9.03374 for se-man-tic seg-men-ta-tion[C]//Advances in neu-ral
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 650--651
+[]\OT1/ptm/m/n/9.03374 Farabet C, Cou-prie C, Na-j-man L, et al. Learn-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+\OT1/ptm/m/n/9.03374 hi-er-ar-chi-cal fea-tures for scene la-bel-ing[J]. IEEE
+ []
+
+
+Underfull \hbox (badness 3058) in paragraph at lines 662--663
+\OT1/ptm/m/n/9.03374 neu-ral net-works for im-age la-bel-ing[J]. IEEE Sig-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+[]\OT1/ptm/m/n/9.03374 Mostajabi M, Yadol-lah-pour P, Shakhnarovich G.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+\OT1/ptm/m/n/9.03374 Feed-for-ward se-man-tic seg-men-ta-tion with zoom-out
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+\OT1/ptm/m/n/9.03374 fea-tures[C]//Proceedings of the IEEE Con-fer-ence
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 668--669
+\OT1/ptm/m/n/9.03374 on Com-puter Vi-sion and Pat-tern Recog-ni-tion. 2015:
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 671--672
+[]\OT1/ptm/m/n/9.03374 Krizhevsky A, Sutskever I, Hin-ton G E. Im-a-genet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
+\OT1/ptm/m/n/9.03374 clas-si-fi-ca-tion with deep con-vo-lu-tional neu-ral
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 674--675
+[]\OT1/ptm/m/n/9.03374 Long J, Shel-hamer E, Dar-rell T. Fully con-vo-lu-tional
+
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 680--681
 []\OT1/ptm/m/n/9.03374 Zhao H, Shi J, Qi X, et al. Pyra-mid Scene Pars-ing
  []
 
 
-Underfull \hbox (badness 1237) in paragraph at lines 550--551
+Underfull \hbox (badness 1845) in paragraph at lines 680--681
+\OT1/ptm/m/n/9.03374 Net-work[C]//Proceedings of the IEEE Con-fer-ence on
+ []
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 683--684
+\OT1/ptm/m/n/9.03374 shal-low net-works." Ad-vances in Neu-ral In-for-ma-tion
+ []
+
+[8]
+Underfull \hbox (badness 1895) in paragraph at lines 689--690
+\OT1/ptm/m/n/9.03374 for scene la-bel-ing." Ad-vances in Neu-ral In-for-ma-tion
+
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 695--696
 []\OT1/ptm/m/n/9.03374 Tighe J, Lazeb-nik S. Find-ing things: Im-age pars-ing
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 553--554
-[]\OT1/ptm/m/n/9.03374 Socher R, Lin C C, Man-ning C, et al. Pars-ing
- []
-
-
-Underfull \hbox (badness 4518) in paragraph at lines 553--554
-\OT1/ptm/m/n/9.03374 nat-u-ral scenes and nat-u-ral lan-guage with re-cur-sive
- []
-
-
-Underfull \hbox (badness 4981) in paragraph at lines 559--560
+Underfull \hbox (badness 4981) in paragraph at lines 698--699
 []\OT1/ptm/m/n/9.03374 Singh G, Kosecka J. Non-para-met-ric scene pars-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 \OT1/ptm/m/n/9.03374 with adap-tive fea-ture rel-e-vance and se-man-tic
  []
 
 
-Underfull \hbox (badness 3895) in paragraph at lines 559--560
+Underfull \hbox (badness 3895) in paragraph at lines 698--699
 \OT1/ptm/m/n/9.03374 con-text[C]//Proceedings of the IEEE Con-fer-ence on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 \OT1/ptm/m/n/9.03374 Com-puter Vi-sion and Pat-tern Recog-ni-tion. 2013:
  []
 
-
-Underfull \hbox (badness 5878) in paragraph at lines 562--563
-\OT1/ptm/m/n/9.03374 for ob-ject recog-ni-tion[C]//Proceedings of the IEEE
+Extra height:21.74022pt when 183.45467pt
+Extra height:21.74022pt when 184.45467pt
+Extra height:21.74022pt when 185.45467pt
+Extra height:0.0pt when 186.45467pt
+(2)Left:186.45467pt Right:171.26186pt Output:186.45467pt
+- LAST -
+Left:186.45467pt
+Right:171.26186pt
+Output:186.45467pt
+./TST_template_tex(2013-NO3).tex:708: Undefined control sequence.
+\\biography ...4\baselineskip \zihao {5-} \parpic 
+                                                  {\includegraphics [height=...
+l.708 \begin{biography}[wangzhy.png]
+                                    
+? 
+File: wangzhy.png Graphic file (type QTm)
+<use  "wangzhy.png" >
+Underfull \hbox (badness 1735) in paragraph at lines 708--711
+\OT1/ptm/m/n/9.03374 de-gree from Harbin In-sti-tute of Tech-nol-ogy, Harbin,
  []
 
-Extra height:0.0pt when 246.4391pt
-(2)Left:246.4391pt Right:252.40965pt Output:246.4391pt
-(2)Left:252.40965pt Right:252.40965pt Output:252.40965pt
-- LAST -
-Left:252.40965pt
-Right:252.40965pt
-Output:252.40965pt
-./TST_template_tex(2013-NO3).tex:567: Undefined control sequence.
+./TST_template_tex(2013-NO3).tex:713: Undefined control sequence.
 \\biography ...4\baselineskip \zihao {5-} \parpic 
                                                   {\includegraphics [height=...
-l.567 \begin{biography}[yourphotofilename.eps]
-                                              
+l.713 \begin{biography}[wangshy.png]
+                                    
 ? 
-File: yourphotofilename.eps Graphic file (type eps)
-<yourphotofilename.eps>
-./TST_template_tex(2013-NO3).tex:572: Undefined control sequence.
+File: wangshy.png Graphic file (type QTm)
+<use  "wangshy.png" >
+./TST_template_tex(2013-NO3).tex:718: Undefined control sequence.
 \\biography ...4\baselineskip \zihao {5-} \parpic 
                                                   {\includegraphics [height=...
-l.572 \begin{biography}[yourphotofilename.eps]
-                                              
+l.718 \begin{biography}[dengzhd.png]
+                                    
 ? 
-File: yourphotofilename.eps Graphic file (type eps)
-<yourphotofilename.eps>
-./TST_template_tex(2013-NO3).tex:577: Undefined control sequence.
-\\biography ...4\baselineskip \zihao {5-} \parpic 
-                                                  {\includegraphics [height=...
-l.577 \begin{biography}[yourphotofilename.eps]
-                                              
-? 
-File: yourphotofilename.eps Graphic file (type eps)
-<yourphotofilename.eps>
-- LAST -
-Extra skip:6.21758pt
-Left:374.91205pt/1.95572pt
-Right:368.69447pt/1.95572pt
-Output:374.67337pt
- [8]
+File: dengzhd.png Graphic file (type QTm)
+<use  "dengzhd.png" >
+Underfull \hbox (badness 3240) in paragraph at lines 718--721
+[][] \OT1/ptm/b/n/9.03374 Deng Zhi-dong \OT1/ptm/m/n/9.03374 re-ceived the B.S.
 
-./TST_template_tex(2013-NO3).tex:584: LaTeX Error: \begin{thebibliography} on i
-nput line 452 ended by \end{document}.
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 718--721
+\OT1/ptm/m/n/9.03374 de-gree from Sichuan Uni-ver-sity, Chengdu, China, in
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 718--721
+\OT1/ptm/m/n/9.03374 1986 and the Ph.D. de-gree from Harbin In-sti-tute of
+ []
+
+- LAST -
+Extra skip:31.2644pt
+Left:304.47096pt/1.95572pt
+Right:273.20656pt/1.95572pt
+Output:304.01263pt
+
+Overfull \hbox (1.71642pt too wide) has occurred while \output is active
+[] 
+ []
+
+[9]
+
+./TST_template_tex(2013-NO3).tex:727: LaTeX Error: \begin{thebibliography} on i
+nput line 518 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.584   \end{document}
+l.727   \end{document}
                       
 ? 
 (./TST_template_tex(2013-NO3).aux)
@@ -1247,23 +1330,20 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  )
 (\end occurred inside a group at level 2)
 
-### semi simple group (level 2) entered at line 452 (\begingroup)
-### simple group (level 1) entered at line 101 ({)
+### semi simple group (level 2) entered at line 518 (\begingroup)
+### simple group (level 1) entered at line 102 ({)
 ### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 5275 strings out of 493591
- 74810 string characters out of 6143545
+ 5294 strings out of 493591
+ 75021 string characters out of 6143545
  152339 words of memory out of 5000000
- 8555 multiletter control sequences out of 15000+600000
- 18600 words of font info for 59 fonts, out of 8000000 for 9000
+ 8573 multiletter control sequences out of 15000+600000
+ 19626 words of font info for 61 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 42i,12n,43p,1752b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,43p,1649b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on TST_template_tex(2013-NO3).pdf (8 pages).
+Output written on TST_template_tex(2013-NO3).pdf (9 pages).
