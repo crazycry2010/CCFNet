@@ -123,7 +123,7 @@ J\hspace{0.8pt}u\hspace{0.8pt}n\hspace{0.8pt}e%
 \begin{strip}
 {\center \vskip 3mm
 {\zihao{3}\textbf{
-Attention to Difficulty: A Cascaded Coarse-to-fine Network for Semantic Segmentation
+Attention to Difficulty: A Cascaded Coarse-To-Fine Network for Semantic Segmentation
 }}
 \vskip 9mm}
 
@@ -147,7 +147,7 @@ Wang Zhenyang, Deng Zhidong$^*$, and Wang Shiyao
 \linespread{1.6667} %
 \noindent
 \bf{Abstract:} {\sf
-Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign a category label to each pixel of a image. Recently, convolutional neural networks have attracted increasing attention on semantic segmentation due to the capabilities of extracting hierarchical features. Since it is required to make dense predictions for a given image, a simple network is hardly qualified to obtain considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CasNet, which aims to pay more attention to the difficult regions. There are three branches in the overall network. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the prediction results are refined by taking a weighted summation of the coarse and fine segmentation results, with the weighting coefficient predicted from the second branch.
+Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign pixel-level labeling to a given image. Recently, convolutional neural networks have great attention on semantic segmentation due to the capabilities of extracting hierarchical features. Since it is required to make dense predictions for the entire image, a simple network is hardly qualified to obtain considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CCFN, which aims to pay more attention to the difficult regions. There are three branches in the CCFN. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the last branch generates the fine predictions and further combine both the coarse and fine predicting results though weighting coefficient estimated from the second branch.
 All above branches focus on their own objectives and collaboratively learn to predict from coarse to fine. In order to evaluate the performance of the proposed network, we conduct experiments on two public datasets including Sift Flow and Stanford Background Dataset. We show that the three branches can be trained in an end-to-end manner and the experimental results demonstrate that compared to all existing models, our CasNet consistently yields the best performance, with accuracy of 91.6\% and 89.7\%, respectively.
 }
 \vskip 4mm
