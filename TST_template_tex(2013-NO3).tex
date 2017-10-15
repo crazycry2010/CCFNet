@@ -223,9 +223,9 @@ In conclusion, we propose a cascade coarse to fine network architecture for sema
 \section{Related Works}
 \label{s:Related}
 \noindent
-Semantic segmentation aims to assign an unique semantic class to each pixel in the input image. Early work is mainly based on hand-craft features, until the success of convolution neural network in recent years. 
+Semantic segmentation aims to assign an unique semantic class to each pixel in the input image. Early work is mainly based on hand-craft features, until convolution neural network is successfully applied to this task in recent years.
 
-Traditional methods have obtained several solutions on image segmentation. Considering the context information, several methods rely on MRF, CRF or other types of graphical models are proposed to ensure the consistency of labeling\upcite{8-10}. For semantic segmentation task, both the global and local context have great impacts on the final segmentation results of this task. Traditional methods only consider the low-level features of the image, which is the biggest problem of these methods.
+Traditional methods have obtained several solutions on semantic segmentation. Considering the context information, several methods rely on MRF, CRF or other types of graphical models are proposed to ensure the consistency of labeling\upcite{8,10}. For semantic segmentation task, both the global and local context have great impacts on the final segmentation results. Traditional methods only take the low-level features of the image into consideration, which is the biggest problem of this kind of methods.
 
 \begin{figure*}[!ht]
 \centering
@@ -234,15 +234,15 @@ Traditional methods have obtained several solutions on image segmentation. Consi
 \label{fig2}
 \end{figure*} 
 
-In recent years, the neural networks, particularly the CNNs have achieved great progress in this pixel-level prediction task. To our knowledge,  \cite{11} is the first semantic segmentation work based on CNNs. Farabet et.al.~\upcite{11} propose a multi-scale convolution neural network, which can extract features from different scale of local regions. The experimental results show that their network has capacities of learning texture, shape and domain information implicitly, and achieves better performance than traditional hand-craft features. 
-In addition, the similar idea is successfully generalised to RGB-D images by Couprie et.al.~\upcite{12}.
-Pinheiro et.al.~\upcity{13} propose recurrent CNNs to enlarge the receptive field of neural networks.
- To ensure a good visual coherence and a high class accuracy, \cite{13} propose a method to capture long range (pixel) label dependencies in images. They use a recurrent architecture of CNNs to capture a long range label dependency while keeping a tight control over the capacity. The procedure is based on supervised deep learning strategies. \cite{14-16} train the parametric CNNs by sampling image patches, which speeds up the training time dramatically. However, they find that patch-based CNNs suffer from local ambiguity problems. \cite{14} estimate the global potential in a non-parametric framework and propose a large margin based CNN metric for better global potential estimation. \cite{15,16} introduce quaddirectional 2D Recurrent Neural Networks to model the long range dependencies among pixels which is able to embed the global image context into the compact local representation and significantly enhance their discriminative power.
+Driven by deep neural networks, there are three types of methods devoted to improve architectural design. One direction is mainly based on multi-scale feature ensemble, since high layer feature contains more semantic information. To our knowledge,  Farabet et.al.~\upcite{11}  pioneer to apply CNNs to semantic segmentation. They propose a multi-scale convolution neural network, which can extract features from different scale of local regions. The experimental results show that their network has capacities of learning texture, shape and domain information implicitly. A similar idea is successfully generalised to RGB-D images by Couprie et.al.~\upcite{12}. Zhao et. al.~\upcite{21} propose pyramid pooling to aggregate different level of context information, which can effectively produce good quality results on semantic segmentation task.
 
+Another direction focuses on enlarging the receptive field of neural networks. Yu and Koltun~\upcite{29} propose dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. In \cite{30}, recurrent neural networks are used to retrieve contextual information by sweeping the image horizontally and vertically in both directions. With a similar idea, Liang~\upcite{24} adopts recurrent convolutional neural network to incorporate both the local discriminative features and the global context information.
 
-	At the same time, researchers attempt to use the pre-trained CNNs for semantic segmentation. \cite{17} obtain the local and proximal features by using the ConvNet while distant and global features are produced from Alex-net\upcite{18}. These above features are further aggregated to predict the categories. Differ from these methods, \cite{19} present a fully convolutional network which is able to take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. They use the CNNs trained on ImageNet as a feature extractor and transfer their learned representations by fine-tuning on the task-specific datasets. \cite{20} propose deep networks by combining the responses at the final DCNN layer with a fully connected CRF. The fully connected pairwise CRF has an ability to capture fine edge details which boosts the final performance. In \cite{21}, it presents that the main problem of the current FCN-based models is lack of the incorprating  of context information. They exploit the capability of global context information by different-region-based context aggregation through a pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet).
+The last direction endow FCN architectures with the ability to provide structured outputs. 
+Chen et.al.~\upcite{31} are the pioneers who first adopt  conditional random field  as post processing to refine the final segmentation results. Zheng et.al.~\upcite{32} follow the work. They combines
+the strengths of convolutional neural networks and conditional random fields based probabilistic graphical modelling, making it possible to train the whole deep network end-to-end.
 
-
+At the same time, researchers attempt to use the pre-trained CNNs for semantic segmentation. Mostajabi et.al.~\upcite{17} obtain the local features by using convolutional neural networks, while  global features are produced from Alex-net. These above features are further aggregated to predict the categories. Differ from this method, \cite{19} present a fully convolutional network which is able to take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. They use the CNNs trained on ImageNet as a feature extractor and transfer their learned representations by fine-tuning on the task-specific datasets.
 
 \section{Method}
 \label{s:Method}
@@ -393,28 +393,31 @@ The three branches are cascaded one by one, and constitute an end-to-end learnin
 \section{Experimental results}
 \label{s:results}
 \noindent
-In this subsection, we present the detailed information about the implementation of CasNet. Moreover, we compare our model to the current state-of-the-art methods and this proposed model achieves superior performances among the existing methods.
+In this section, we present the detailed information about the implementation of CasNet. Moreover, we compare our model to the current state-of-the-art methods. The proposed model achieves superior performances among the existing methods.
 
 \subsection{Datasets}
 \noindent
-We prove the effectiveness of CasNet on two semantic segmentation datasets, which are SIFT Flow and Stanford Background, respectively. The SIFT Flow dataset contains 2688 samples each has 256x256 pixels with RGB channels. 2488 images are used as a training set while the rest 200 images are used for testing. The dataset defines a total of 33 semantic categories, but the distribution of category is nonuniform.
+We prove the effectiveness of CasNet on two semantic segmentation datasets, which are SIFT Flow\upcite{6} and Stanford Background\upcite{7}, respectively. The SIFT Flow dataset contains 2,688 images and 33 labels. Each image has a resolution of   256x256 pixels with BGR three channels. Among them, 2,488 images are used as training set while the rest 200 images are used for testing. The dataset defines a total of 33 semantic categories, but the distribution of category is nonuniform.
 
-The Stanford Background dataset contains 715 images with different image sizes, but no more than 320x240 pixels. According to the previous research and testing methods, this paper divides the dataset by 5x cross validation method, and 572 images are used as training samples while 143 samples as the test samples. The Stanford Background dataset contains eight semantic categories, and the category distribution is more balanced than the SIFT Flow dataset.
+The Stanford Background dataset contains 715 images of outdoor scenes with different image sizes. All images have approximately 320x240 pixels in average, where each image contains at least one foreground object. Be consistent with previous work, 5-fold cross validation is used for evaluation. So 572 images are used for training while the other 143 for testing. The Stanford Background dataset contains eight semantic categories, and the distribution of each categorie is more balanced than the SIFT Flow dataset.
 
 
 \subsection{Network Configuration}
 \noindent
-The implementation of our CasNet is based on public platform Caffe~\upcite{23}. The training procedure uses stochastic gradient descent (SGD) algorithm via end-to-end learning. Our model adopt pre-trained models like most related work~\cite{21} on semantic segmentation. The learning rate is initially set to 1e-4 and then decreased by a factor of 10 when the validation set accuracy stopped improving. In total, the learning rate is repeatedly decreased 2 times. The momentum and weight decay are set to 0.9 and 0.0001.
+The implementation of CasNet is based on the open-source platform Caffe~\upcite{23}. The training procedure uses stochastic gradient descent (SGD) algorithm for end-to-end learning. Our model adopt pre-trained models like most related work~\cite{21} on semantic segmentation. The learning rate is initialized to 1e-4 and decreased by a factor of 10 whenever the accuracy of the validation set stops improving. The learning rate is repeatedly decreased 2 times in total. The momentum and weight decay are set to 0.9 and 0.0001, respectively.
 
-Data argumentation is widely applied to semantic segmentation in order to avoid overfit. Various kinds of transformations are used to expand the training sizes so as to improve the generalisation of the proposed networks. In our experiments, we also employ this kind of methods by expanding the input images 1-2 times and randomly cropping 233x233  area for training.  Larger input size and mini-batch can help improve the segmentation performance. Due to the limitation of both computation and memory, we only use 233*233 images and the mini-batch is 4.
+Data argumentation is widely applied to semantic segmentation in order to avoid overfitting.
+Different kinds of data argumentation methods are used to ameliorate the diversity of data samples, so as to improve the generalization ability of the network.
+In this paper, we also employ this kind of methods with a combination of scaling and translation. 
+Larger input size and batch size can help improve the segmentation performance. But due to the limitation of both computation and memory, we randomly crop 233\times233 part from multi-scale input images, and training is done in mini-batch of size 4.
 
 
 
 \subsection{Comparison Results}
 \noindent
 
-During the comparison, we first conduct several experiments on SIFT Flow dataset.
-Firstly, we compare CasNet with a baseline model, which is composed by a ResNet and two FCN layers. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the coarse branch of CasNet. The comparison result is show as Table~\ref{t:self1}, CasNet leads to about 1\% gain in comparison to the baseline ResNet segmentation network. Since cascade coarse to fine network architecture is effective for refining the segmentation results.
+We first conduct several comparison experiments on SIFT Flow dataset.
+Firstly, we compare CasNet with a baseline model, which is composed by a ResNet and two FCN layers. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the coarse branch of CasNet. The comparison result is show as Table~\ref{t:self1}, CasNet leads to about 1\% gain in comparison to the baseline ResNet segmentation network. Since CasNet is effective to refine the segmentation results.
 
 \begin{table}[h]
 \large
@@ -432,7 +435,7 @@ CasNet & 91.6  \\
 \end{tabular}
 \end{table}
 
-A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, the CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
+A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images, and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the overall network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
 
 In addition, on the SIFT Flow dataset, we compare the CasNet to other segmentation methods. Pixel-level semantic segmentation is usually measured by two accuracy measures: Pixel Accuracy and Class Accuracy. The average pixel accuracy is the percentage of the total number of pixels that correctly classified on the test set, and it is usually measured by the intersection-over-union (IoU). The average category accuracy is the average of the correct rate for each category of pixel classification. The experimental results which is shown in Table \ref{table1} which prove that CasNet achieves an accuracy of 91.6\%, and outperform the current state-of-the-art results.
 
@@ -523,102 +526,6 @@ This work was supported in part by the National Science Foundation of China (NSF
 \zihao{5-} \addtolength{\itemsep}{-1em}
 \vspace {1.5mm}
 
-%\bibitem[1]{1}
-%Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
-
-%\bibitem[4]{4}
-%Graves A, Mohamed A, Hinton G. Speech recognition with deep recurrent neural networks[C]//Acoustics, speech and signal processing (icassp), 2013 ieee international conference on. IEEE, 2013: 6645-6649.
-%
-%\bibitem[5]{5}
-%Sermanet P, Eigen D, Zhang X, et al. Overfeat: Integrated recognition, localization and detection using convolutional networks[J]. arXiv preprint arXiv:1312.6229, 2013.
-%
-%\bibitem[6]{6}
-%Ioffe S, Szegedy C. Batch normalization: Accelerating deep network training by reducing internal covariate shift[J]. arXiv preprint arXiv:1502.03167, 2015.
-%
-%\bibitem[7]{7}
-%He K, Zhang X, Ren S, et al. Deep residual learning for image recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 770-778.
-
-%\bibitem[8]{8}
-%Liu C, Yuen J, Torralba A. Sift flow: Dense correspondence across scenes and its applications[J]. IEEE transactions on pattern analysis and machine intelligence, 2011, 33(5): 978-994.
-%
-%\bibitem[9]{9}
-%Gould S, Fulton R, Koller D. Decomposing a scene into geometric and semantically consistent regions[C]//Computer Vision, 2009 IEEE 12th International Conference on. IEEE, 2009: 1-8.
-%
-%
-%\bibitem[10]{10}
-%Russell C, Kohli P, Torr P H S. Associative hierarchical crfs for object class image segmentation[C]//Computer Vision, 2009 IEEE 12th International Conference on. IEEE, 2009: 739-746.
-%
-%\bibitem[11]{11}
-%Kumar M P, Koller D. Efficiently selecting regions for scene understanding[C]//Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on. IEEE, 2010: 3217-3224.
-%
-%\bibitem[12]{12}
-%Lempitsky V, Vedaldi A, Zisserman A. Pylon model for semantic segmentation[C]//Advances in neural information processing systems. 2011: 1485-1493.
-%
-%\bibitem[13]{13}
-%Farabet C, Couprie C, Najman L, et al. Learning hierarchical features for scene labeling[J]. IEEE transactions on pattern analysis and machine intelligence, 2013, 35(8): 1915-1929.
-%
-%\bibitem[14]{14}
-%Couprie C, Farabet C, Najman L, et al. Indoor semantic segmentation using depth information[J]. arXiv preprint arXiv:1301.3572, 2013.
-%
-%\bibitem[15]{15}
-%Pinheiro P H O, Collobert R. Recurrent Convolutional Neural Networks for Scene Labeling[C]//ICML. 2014: 82-90.
-%
-%\bibitem[16]{16}
-%Shuai B, Wang G, Zuo Z, et al. Integrating parametric and non-parametric models for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 4249-4258.
-%
-%\bibitem[17]{17}
-%Shuai B, Zuo Z, Wang G. Quaddirectional 2d-recurrent neural networks for image labeling[J]. IEEE Signal Processing Letters, 2015, 22(11): 1990-1994.
-%
-%\bibitem[18]{18}
-%Shuai B, Zuo Z, Wang B, et al. Dag-recurrent neural networks for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3620-3629.
-%
-%\bibitem[19]{19}
-%Mostajabi M, Yadollahpour P, Shakhnarovich G. Feedforward semantic segmentation with zoom-out features[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3376-3385.
-%
-%\bibitem[20]{20}
-%Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
-%
-%\bibitem[21]{21}
-%Long J, Shelhamer E, Darrell T. Fully convolutional networks for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3431-3440.
-%
-%\bibitem[22]{22}
-%Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.
-%
-%\bibitem[23]{23}
-%Zhao H, Shi J, Qi X, et al. Pyramid Scene Parsing Network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.
-%
-%\bibitem[24]{24}
-%Jia Y, Shelhamer E, Donahue J, et al. Caffe: Convolutional architecture for fast feature embedding[C]//Proceedings of the 22nd ACM international conference on Multimedia. ACM, 2014: 675-678.
-%
-%\bibitem[25]{25}
-%Tighe J, Lazebnik S. Superparsing: scalable nonparametric image parsing with superpixels[C]//European conference on computer vision. Springer Berlin Heidelberg, 2010: 352-365.
-%
-%\bibitem[26]{26}
-%Tighe J, Lazebnik S. Finding things: Image parsing with regions and per-exemplar detectors[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2013: 3001-3008.
-%
-%\bibitem[27]{27}
-%Socher R, Lin C C, Manning C, et al. Parsing natural scenes and natural language with recursive neural networks[C]//Proceedings of the 28th international conference on machine learning (ICML-11). 2011: 129-136.
-%
-%\bibitem[28]{28}
-%Eigen D, Fergus R. Nonparametric image parsing using adaptive neighbor sets[C]//Computer vision and pattern recognition (CVPR), 2012 IEEE Conference on. IEEE, 2012: 2799-2806.
-%
-%\bibitem[29]{29}
-%Singh G, Kosecka J. Nonparametric scene parsing with adaptive feature relevance and semantic context[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2013: 3151-3157.
-%
-%\bibitem[30]{30}
-%Liang M, Hu X. Recurrent convolutional neural network for object recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3367-3375.
-%
-%\bibitem[31]{31}
-%Sung, K-K., and Tomaso Poggio. "Example-based learning for view-based human face detection." IEEE Transactions on pattern analysis and machine intelligence 20.1 (1998): 39-51.
-%
-%\bibitem[32]{32}
-%Veit, Andreas, Michael J. Wilber, and Serge Belongie. "Residual networks behave like ensembles of relatively shallow networks." Advances in Neural Information Processing Systems. 2016.
-%
-%\bibitem[33]{33}
-%Li, Xiaoxiao, et al. "Not All Pixels Are Equal: Difficulty-aware Semantic Segmentation via Deep Layer Cascade." arXiv preprint arXiv:1704.01344 (2017).
-
-%\bibitem[1]{1}
-%Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
 
 \bibitem[1]{1}
 He K, Zhang X, Ren S, et al. Deep residual learning for image recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 770-778.
@@ -644,65 +551,77 @@ Gould S, Fulton R, Koller D. Decomposing a scene into geometric and semantically
 \bibitem[8]{8}
 Russell C, Kohli P, Torr P H S. Associative hierarchical crfs for object class image segmentation[C]//Computer Vision, 2009 IEEE 12th International Conference on. IEEE, 2009: 739-746.
 
-\bibitem[9]{9}
-Kumar M P, Koller D. Efficiently selecting regions for scene understanding[C]//Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on. IEEE, 2010: 3217-3224.
+%\bibitem[9]{9}
+%Kumar M P, Koller D. Efficiently selecting regions for scene understanding[C]//Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on. IEEE, 2010: 3217-3224.
 
-\bibitem[10]{10}
-Lempitsky V, Vedaldi A, Zisserman A. Pylon model for semantic segmentation[C]//Advances in neural information processing systems. 2011: 1485-1493.
+\bibitem[9]{10}
+%Lempitsky V, Vedaldi A, Zisserman A. Pylon model for semantic segmentation[C]//Advances in neural information processing systems. 2011: 1485-1493.
 
-\bibitem[11]{11}
+\bibitem[10]{11}
 Farabet C, Couprie C, Najman L, et al. Learning hierarchical features for scene labeling[J]. IEEE transactions on pattern analysis and machine intelligence, 2013, 35(8): 1915-1929.
 
-\bibitem[12]{12}
+\bibitem[11]{12}
 Couprie C, Farabet C, Najman L, et al. Indoor semantic segmentation using depth information[J]. arXiv preprint arXiv:1301.3572, 2013.
 
-\bibitem[13]{13}
-Pinheiro P H O, Collobert R. Recurrent Convolutional Neural Networks for Scene Labeling[C]//ICML. 2014: 82-90.
+%\bibitem[13]{13}
+%Pinheiro P H O, Collobert R. Recurrent Convolutional Neural Networks for Scene Labeling[C]//ICML. 2014: 82-90.
 
-\bibitem[14]{14}
-Shuai B, Wang G, Zuo Z, et al. Integrating parametric and non-parametric models for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 4249-4258.
+%\bibitem[14]{14}
+%Shuai B, Wang G, Zuo Z, et al. Integrating parametric and non-parametric models for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 4249-4258.
 
-\bibitem[15]{15}
-Shuai B, Zuo Z, Wang G. Quaddirectional 2d-recurrent neural networks for image labeling[J]. IEEE Signal Processing Letters, 2015, 22(11): 1990-1994.
+%\bibitem[15]{15}
+%Shuai B, Zuo Z, Wang G. Quaddirectional 2d-recurrent neural networks for image labeling[J]. IEEE Signal Processing Letters, 2015, 22(11): 1990-1994.
 
-\bibitem[16]{16}
-Shuai B, Zuo Z, Wang B, et al. Dag-recurrent neural networks for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3620-3629.
+%\bibitem[16]{16}
+%Shuai B, Zuo Z, Wang B, et al. Dag-recurrent neural networks for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3620-3629.
 
-\bibitem[17]{17}
+\bibitem[12]{17}
 Mostajabi M, Yadollahpour P, Shakhnarovich G. Feedforward semantic segmentation with zoom-out features[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3376-3385.
 
-\bibitem[18]{18}
-Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
+%\bibitem[18]{18}
+%Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
 
-\bibitem[19]{19}
+\bibitem[13]{19}
 Long J, Shelhamer E, Darrell T. Fully convolutional networks for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3431-3440.
 
-\bibitem[20]{20}
-Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.
+%\bibitem[20]{20}
+%Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.
 
-\bibitem[21]{21}
+\bibitem[14]{21}
 Zhao H, Shi J, Qi X, et al. Pyramid Scene Parsing Network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.
 
-\bibitem[22]{22}
+\bibitem[15]{22}
 Veit, Andreas, Michael J. Wilber, and Serge Belongie. "Residual networks behave like ensembles of relatively shallow networks." Advances in Neural Information Processing Systems. 2016.
 
-\bibitem[23]{23}
+\bibitem[16]{23}
 Jia Y, Shelhamer E, Donahue J, et al. Caffe: Convolutional architecture for fast feature embedding[C]//Proceedings of the 22nd ACM international conference on Multimedia. ACM, 2014: 675-678.
 
-\bibitem[24]{24}
+\bibitem[17]{24}
 Liang, Ming, Xiaolin Hu, and Bo Zhang. "Convolutional neural networks with intra-layer recurrent connections for scene labeling." Advances in Neural Information Processing Systems. 2015.
 
-\bibitem[25]{25}
+\bibitem[18]{25}
 Tighe J, Lazebnik S. Superparsing: scalable nonparametric image parsing with superpixels[C]//European conference on computer vision. Springer Berlin Heidelberg, 2010: 352-365.
 
-\bibitem[26]{26}
+\bibitem[19]{26}
 Tighe J, Lazebnik S. Finding things: Image parsing with regions and per-exemplar detectors[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2013: 3001-3008.
 
-\bibitem[27]{27}
+\bibitem[20]{27}
 Singh G, Kosecka J. Nonparametric scene parsing with adaptive feature relevance and semantic context[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2013: 3151-3157.
 
-\bibitem[28]{28}
+\bibitem[21]{28}
 Eigen D, Fergus R. Nonparametric image parsing using adaptive neighbor sets[C]//Computer vision and pattern recognition (CVPR), 2012 IEEE Conference on. IEEE, 2012: 2799-2806.
+
+\bibitem[22]{29}
+Yu F, Koltun V. Multi-scale context aggregation by dilated convolutions[J]. arXiv preprint arXiv:1511.07122, 2015.
+
+\bibitem[23]{30}
+Visin F, Ciccone M, Romero A, et al. Reseg: A recurrent neural network-based model for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops. 2016: 41-48.
+
+\bibitem[24]{31}
+Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. arXiv preprint arXiv:1606.00915, 2016.
+
+\bibitem[25]{32}
+Zheng S, Jayasumana S, Romera-Paredes B, et al. Conditional random fields as recurrent neural networks[C]//Proceedings of the IEEE International Conference on Computer Vision. 2015: 1529-1537.
 
 
 
