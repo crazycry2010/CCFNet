@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.1.15)  15 OCT 2017 21:21
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.1.15)  15 OCT 2017 21:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -666,8 +666,8 @@ Underfull \hbox (badness 2735) in paragraph at lines 200--201
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 202--203
-[]\OT1/ptm/m/n/10.53937 In con-clu-sion, we pro-pose a cas-cade coarse to
+Underfull \hbox (badness 1655) in paragraph at lines 202--203
+[]\OT1/ptm/m/n/10.53937 In con-clu-sion, we pro-pose a cas-cade coarse-to-
  []
 
 
@@ -705,11 +705,6 @@ l.228 ... the consistency of labeling\upcite{8,10}
                                                   . For semantic segmentatio...
 
 ? 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.37752> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 228.
-
-LaTeX Warning: Citation `10' on page 2 undefined on input line 228.
-
 
 Underfull \hbox (badness 2538) in paragraph at lines 228--229
 \OT1/ptm/m/n/10.53937 in-for-ma-tion, sev-eral meth-ods rely on MRF, CRF
@@ -779,7 +774,7 @@ l.239 ...s. With a similar idea, Liang~\upcite{24}
 ? 
 
 Underfull \hbox (badness 5133) in paragraph at lines 239--240
-\OT1/ptm/m/n/10.53937 In [22], re-cur-rent neu-ral net-works are used to
+\OT1/ptm/m/n/10.53937 In [23], re-cur-rent neu-ral net-works are used to
  []
 
 
@@ -792,6 +787,12 @@ Underfull \hbox (badness 3396) in paragraph at lines 239--240
 \OT1/ptm/m/n/10.53937 With a sim-i-lar idea, Liang $[]$ adopts re-cur-rent
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 241.
+ [2]
 ./TST_template_tex(2013-NO3).tex:242: Undefined control sequence.
 \upcite #1->\superscript 
                          {\textsuperscript {\cite {#1}}}
@@ -806,12 +807,6 @@ l.242 ...ntation results. Zheng et.al.~\upcite{32}
                                                    follow the work. They com...
 
 ? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 244.
- [2]
 ./TST_template_tex(2013-NO3).tex:245: Undefined control sequence.
 \upcite #1->\superscript 
                          {\textsuperscript {\cite {#1}}}
@@ -1126,9 +1121,6 @@ l.456 Farabet et al. balanced\upcite{11}
 l.457 Pinheiro et al.\upcite{13}
                                  & 77.7 & 29.8 \\
 ? 
-
-LaTeX Warning: Citation `13' on page 7 undefined on input line 457.
-
 ./TST_template_tex(2013-NO3).tex:458: Undefined control sequence.
 \upcite #1->\superscript 
                          {\textsuperscript {\cite {#1}}}
@@ -1185,9 +1177,6 @@ l.482 Singh and Kosecka\upcite{27}
 l.483 Lempitsky et al.\upcite{10}
                                   & 81.9 & 72.4 \\
 ? 
-
-LaTeX Warning: Citation `10' on page 7 undefined on input line 483.
-
 ./TST_template_tex(2013-NO3).tex:484: Undefined control sequence.
 \upcite #1->\superscript 
                          {\textsuperscript {\cite {#1}}}
@@ -1248,6 +1237,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
 Underfull \hbox (badness 10000) in paragraph at lines 549--550
 \OT1/ptm/m/n/9.03374 re-gions[C]//Computer Vi-sion, 2009 IEEE 12th
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 558--559
+[]\OT1/ptm/m/n/9.03374 Lempitsky V, Vedaldi A, Zis-ser-man A. Py-lon model
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
+\OT1/ptm/m/n/9.03374 for se-man-tic seg-men-ta-tion[C]//Advances in neu-ral
  []
 
 
@@ -1332,7 +1331,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 609--610
 \OT1/ptm/m/n/9.03374 Com-puter Vi-sion and Pat-tern Recog-ni-tion. 2013:
  []
 
-
+[8]
 Underfull \hbox (badness 2608) in paragraph at lines 618--619
 []\OT1/ptm/m/n/9.03374 Visin F, Ci-c-cone M, Romero A, et al. Re-seg: A
  []
@@ -1342,7 +1341,7 @@ Underfull \hbox (badness 5622) in paragraph at lines 618--619
 \OT1/ptm/m/n/9.03374 re-cur-rent neu-ral network-based model for se-man-tic
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 624--625
 []\OT1/ptm/m/n/9.03374 Zheng S, Jaya-sumana S, Romera-Paredes B, et
  []
@@ -1357,30 +1356,17 @@ Underfull \hbox (badness 7814) in paragraph at lines 624--625
 \OT1/ptm/m/n/9.03374 net-works[C]//Proceedings of the IEEE In-ter-na-tional
  []
 
-Extra height:10.0pt when 75.38544pt
 
-Underfull \vbox (badness 1033) has occurred while \output is active []
+Underfull \vbox (badness 1436) has occurred while \output is active []
 
-
-Underfull \vbox (badness 1033) has occurred while \output is active []
-
-Extra height:10.0pt when 76.38544pt
-
-Underfull \vbox (badness 1430) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1430) has occurred while \output is active []
-
-Extra height:10.0pt when 77.38544pt
-
-Underfull \vbox (badness 1917) has occurred while \output is active []
-
-Extra height:0.0pt when 78.38544pt
-(2)Left:78.38544pt Right:67.66736pt Output:78.38544pt
+Extra height:21.74022pt when 109.57236pt
+Extra height:0.0pt when 110.57236pt
+(2)Left:110.57236pt Right:113.5945pt Output:110.57236pt
+(2)Left:113.5945pt Right:113.5945pt Output:113.5945pt
 - LAST -
-Left:78.38544pt
-Right:67.66736pt
-Output:78.38544pt
+Left:113.5945pt
+Right:113.5945pt
+Output:113.5945pt
 
 ./TST_template_tex(2013-NO3).tex:631: Undefined control sequence.
 \\biography ...4\baselineskip \zihao {5-} \parpic 
@@ -1426,10 +1412,10 @@ Underfull \hbox (badness 1412) in paragraph at lines 641--644
  []
 
 - LAST -
-Extra skip:33.09375pt
+Extra skip:31.2644pt
 Left:304.47096pt/1.95572pt
-Right:271.37721pt/1.95572pt
-Output:304.09796pt
+Right:273.20656pt/1.95572pt
+Output:304.01263pt
 
 Overfull \hbox (1.71642pt too wide) has occurred while \output is active
 [] 
@@ -1452,12 +1438,6 @@ l.650   \end{document}
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.48314pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  )
 (\end occurred inside a group at level 2)
 
@@ -1466,11 +1446,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 5290 strings out of 493591
- 75001 string characters out of 6143546
+ 5288 strings out of 493591
+ 74962 string characters out of 6143546
  152339 words of memory out of 5000000
- 8569 multiletter control sequences out of 15000+600000
- 19626 words of font info for 61 fonts, out of 8000000 for 9000
+ 8567 multiletter control sequences out of 15000+600000
+ 19107 words of font info for 60 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  42i,24n,43p,1288b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
