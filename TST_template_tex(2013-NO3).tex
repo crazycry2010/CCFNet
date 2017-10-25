@@ -1,4 +1,4 @@
-\documentclass[10.5pt,compsoc]{TsT}
+ \documentclass[10.5pt,compsoc]{TsT}
 \usepackage{graphicx}
 \usepackage{footmisc}
 \usepackage{subfigure}
@@ -25,7 +25,7 @@
 
 %===============================%
 \headevenname{\zihao{-5}{\textbf{\emph{Tsinghua Science and Technology, June}}} 2013, 18(3): 000-000}%
-\headoddname{{\sf Wang Zhenyang et al.:}\quad {\textbf{\emph{Attention to Difficulty: A Cascade Coarse to Fine Network Architecture for Semantic Segmentation}}}}%
+\headoddname{{\sf Anonymous:}\quad {\textbf{\emph{Attention to Difficulty: A Cascade Coarse to Fine Network Architecture for Semantic Segmentation}}}}%
 %footnote use of *
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\upcite}[1]{\superscript{\textsuperscript{\cite{#1}}}}
@@ -128,7 +128,7 @@ Attention to Difficulty: A Cascaded Coarse-To-Fine Network for Semantic Segmenta
 \vskip 9mm}
 
 {\center {\sf \zihao{5}
-Wang Zhenyang, Deng Zhidong$^*$, and Wang Shiyao
+Anonymous Submission.
 }
 \vskip 5mm}
 %{\center \zihao{-5}{\textbf{
@@ -147,7 +147,7 @@ Wang Zhenyang, Deng Zhidong$^*$, and Wang Shiyao
 \linespread{1.6667} %
 \noindent
 \bf{Abstract:} {\sf
-Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign pixel-level labeling to a given image. Recently, convolutional neural networks have great attention on semantic segmentation due to the capabilities of extracting hierarchical features. Since it is required to make dense predictions for the entire image, a simple network is hardly qualified to obtain considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CasNet, which aims to pay more attention to the difficult regions. There are three branches in the CasNet. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the last branch generates the fine predictions and further combine both the coarse and fine predicting results though weighting coefficient which is estimated by the second branch.
+Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign pixel-level labeling to the given image. Since it is required to make dense predictions for the entire image, a simple network is hardly qualified to obtain considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CasNet, which aims to pay more attention to the difficult regions. There are three branches in the CasNet. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the last branch generates fine predictions and further combine both the coarse and fine predicting results though weighting coefficient which is estimated by the second branch.
 All above branches focus on their own objectives and collaboratively learn to predict from coarse to fine. In order to evaluate the performance of the proposed network, we conduct experiments on two public datasets including Sift Flow and Stanford Background Dataset. We show that the three branches can be trained in an end-to-end manner and the experimental results demonstrate that compared to all existing models, our CasNet consistently yields the best performance, with accuracy of 91.6\% and 89.7\%, respectively.
 }
 \vskip 4mm
@@ -177,13 +177,13 @@ semantic segmentation; hard negative mining; convolutional neural network
 \vskip -4.5mm
 \noindent
 \setlength{\tabcolsep}{1pt}
-\begin{tabular}{p{1.5mm}p{79.5mm}}
-$\bullet$& Wang Zhenyang, Deng Zhidong, Wang Shiyao are with the Department of Computer Science, Tsinghua University, Beijing 100084, China. E-mail: crazycry2010@gmail.com, michael@tsinghua.edu.cn, sy-wang14@mails.tsinghua.edu.cn \\
-$\sf{*}$&
-To whom correspondence should be addressed. \\
-          &          Manuscript received: 2017-09-20; revised: year-month-day; accepted: year-month-day
-
-\end{tabular}
+%\begin{tabular}{p{1.5mm}p{79.5mm}}
+%$\bullet$& Wang Zhenyang, Deng Zhidong, Wang Shiyao are with the Department of Computer Science, Tsinghua University, Beijing 100084, China. E-mail: crazycry2010@gmail.com, michael@tsinghua.edu.cn, sy-wang14@mails.tsinghua.edu.cn \\
+%$\sf{*}$&
+%To whom correspondence should be addressed. \\
+%          &          Manuscript received: 2017-09-20; revised: year-month-day; accepted: year-month-day
+%
+%\end{tabular}
 \end{figure}\zihao{5}
 
 
@@ -199,7 +199,7 @@ On the one hand, in order to improve the localization of object boundaries, cond
 
 In this paper, a cascaded coarse-to-fine network architecture, CasNet for short, is proposed. Different from the previous work that uses a simple network, we attempt to explore a model with multiple segmentation branches which are collaboratively to refine the predicting results. Specifically, CasNet is composed by three branches which share a same feature extraction network but focus on their own targets. The first branch is a coarse segmentation network which is able to handle the easy and confident regions. Aiming to deal with the problem of unbalanced distribution, the second branch is an attention network used to predict the probability of being a hard example for each pixel. For these difficult pixels, the last segmentation branch is exploited to refine the segmentation results. 
 
-To sum up, we address the task of semantic image segmentation with a cascaded coarse-to-fine network architecture. It incorporates the idea of hard mining by using an attention branch that are experimentally shown to have substantial practical merit. We validate the CasNet on both Sift Flow\upcite{6} and Stanford Background\upcite{7} datasets
+To sum up, we address the task of semantic image segmentation with a cascaded coarse-to-fine network architecture. It incorporates the idea of hard mining by using an attention branch that are experimentally shown to have substantial practical merit. We validate the CasNet on both Sift Flow\upcite{6} and Stanford Background\upcite{7} datasets.
 
 
 \begin{figure}
@@ -257,7 +257,7 @@ y = F(x, \{W_{i}\}) + x \\
 \end{equation} 
 where $x$ and $y$ denote the input and output of a layer. The function $F(x, \{W_{i}\})$ indicates the residual mapping while the $W_{i}$ represents a group of learnable weights. The operation $F + x$ is performed by a shortcut connection and element-wise which in fact combine the features of multi-scale. It benefits the segmentation task a lot. For semantic segmentation,  the context is important to predict the correct label of each pixel instance. However, since different objects may have different contours, it is difficult to determine the boundaries of context. The problem becomes more complicated when considering the various perspectives of each image. A simple yet effective method to solve this problem is to integrate multi-scale features for label predicting. Consequently, the residual error model itself has the property of extracting and integrating multi-scale features, which can be seen from Equation \ref {equ1}. From the unravelled view by Veit et al.~\upcite{22}, a two-unit ResNet is equivalent to an ensemble of four sub-networks with different receptive fields. So the whole ResNet-50 can be expanded as a linearly growing ensemble of sub-networks, which can extract and integrate multi-scale features.
 
-Besides, there are two improvements adopted by ResNet-50 to make it more suitable for semantic segmentation. First, we only keep the first three pooling layers in order to preserve the resolution. So the final resolution of the prediction is 1/8 of the original input image. Secondly, we replace the convolutional layer in the last two stages with the dilated convolutions. It can help to enlarge the reception field of predicted feature maps.
+Besides, there are two improvements adopted by ResNet-50 to make it more suitable for semantic segmentation. First, we only keep the first three pooling layers in order to preserve the resolution. So the final resolution of the prediction is 1/8 of the original input image. Secondly, we replace the convolutional layer in the last two stages with dilated convolutions. It can help to enlarge the reception field of predicted feature maps.
 
 
 
@@ -389,7 +389,7 @@ In this section, we present the detailed information about the implementation of
 \noindent
 We prove the effectiveness of CasNet on two semantic segmentation datasets, which are SIFT Flow\upcite{6} and Stanford Background\upcite{7}, respectively. The SIFT Flow dataset contains 2,688 images and 33 labels. Each image has a resolution of   256x256 pixels with BGR three channels. Among them, 2,488 images are used as training set while the rest 200 images are used for testing. The dataset defines a total of 33 semantic categories, but the distribution of category is nonuniform.
 
-The Stanford Background dataset contains 715 images of outdoor scenes with different image sizes. All images have approximately 320x240 pixels in average, where each image contains at least one foreground object. Be consistent with previous work, 5-fold cross validation is used for evaluation. So 572 images are used for training while the other 143 for testing. The Stanford Background dataset contains eight semantic categories, and the distribution of each categorie is more balanced than the SIFT Flow dataset.
+The Stanford Background dataset contains 715 images of outdoor scenes with different image sizes. All images have approximately 320x240 pixels in average, where each image contains at least one foreground object. Be consistent with previous work, 5-fold cross validation is used for evaluation. So 572 images are used for training while the other 143 for testing. The Stanford Background dataset contains eight semantic categories, and the distribution of each category is more balanced than the SIFT Flow dataset.
 
 
 \subsection{Network Configuration}
@@ -399,7 +399,7 @@ The implementation of CasNet is based on the open-source platform Caffe~\upcite{
 Data argumentation is widely applied to semantic segmentation in order to avoid overfitting.
 Different kinds of data argumentation methods are used to ameliorate the diversity of data samples, so as to improve the generalization ability of the network.
 In this paper, we also employ this kind of methods with a combination of scaling and translation. 
-Larger input size and batch size can help improve the segmentation performance. But due to the limitation of both computation and memory, we randomly crop 233\times233 part from multi-scale input images, and training is done in mini-batch of size 4.
+Larger input size and batch size can help improve the segmentation performance. But due to the limitation of both computation and memory, we randomly crop $233\times233$ part from multi-scale input images, and training is done in mini-batch of size 4.
 
 
 
@@ -503,7 +503,7 @@ We show how to train these three branches in an end-to-end manner. And finally, 
 
 \zihao{5--}
 \noindent
-This work was supported in part by the National Science Foundation of China (NSFC) under Grant Nos. 91420106, 90820305, and 60775040, and by the National High-Tech R\&D Program of China under Grant No. 2012AA041402.
+%This work was supported in part by the National Science Foundation of China (NSFC) under Grant Nos. 91420106, 90820305, and 60775040, and by the National High-Tech R\&D Program of China under Grant No. 2012AA041402.
 
 \vskip 2mm
 \zihao{5}
@@ -618,22 +618,20 @@ Zheng S, Jayasumana S, Romera-Paredes B, et al. Conditional random fields as rec
 \begin{strip}
 \end{strip}
 
-\begin{biography}[wangzhy.png]
-\noindent
-\textbf{Wang Zhenyang}\ \  received the B.S. degree from Harbin Institute of Technology, Harbin, China, in 2011 and has been pursuing the Ph.D. degree from Tsinghua University, Beijing, China, since 2011, both in computer science. Her research interests include computer vision, deep learning, and machine learning.
-\end{biography}
-
-\begin{biography}[wangshy.png]
-\noindent
-\textbf{Wang Shiyao} received the B.S. degree from Tianjin University, Tianjin, China, in 2014 and has been pursuing the Ph.D. degree from Tsinghua University, Beijing, China, since 2014, both in computer science. Her research interests include computer vision, deep learning, and machine learning.
-\end{biography}
-
-\begin{biography}[dengzhd.png]
-\noindent
-\textbf{Deng Zhidong} received the B.S. degree from Sichuan University, Chengdu, China, in 1986 and the Ph.D. degree from Harbin Institute of Technology, Harbin, China, in 1991, respectively, both in computer science and automation. From 1992 to 1994, he was a Postdoctoral Researcher at the Computer Science Department, Tsinghua University, Beijing, China, where in 1994, he became an Associate Professor. From 1996 to 1997, he served as a Research Associate at Hong Kong Polytechnic University, Kowloon, Hong Kong, China. From 2001 to 2003, he was a Visiting Professor at the Washington University in St. Louis, St. Louis, MO, USA. He has been a Full Professor at Tsinghua University since 2000. His current research interests include artificial intelligence, deep learning, computational neuroscience, computational biology, driverless car, robotics, wireless sensor network, and virtual reality.
-\end{biography}
-%\vskip 22mm
-
+%\begin{biography}[wangzhy.png]
+%\noindent
+%\textbf{Wang Zhenyang}\ \  received the B.S. degree from Harbin Institute of Technology, Harbin, China, in 2011 and has been pursuing the Ph.D. degree from Tsinghua University, Beijing, China, since 2011, both in computer science. Her research interests include computer vision, deep learning, and machine learning.
+%\end{biography}
+%
+%\begin{biography}[wangshy.png]
+%\noindent
+%\textbf{Wang Shiyao} received the B.S. degree from Tianjin University, Tianjin, China, in 2014 and has been pursuing the Ph.D. degree from Tsinghua University, Beijing, China, since 2014, both in computer science. Her research interests include computer vision, deep learning, and machine learning.
+%\end{biography}
+%
+%\begin{biography}[dengzhd.png]
+%\noindent
+%\textbf{Deng Zhidong} received the B.S. degree from Sichuan University, Chengdu, China, in 1986 and the Ph.D. degree from Harbin Institute of Technology, Harbin, China, in 1991, respectively, both in computer science and automation. From 1992 to 1994, he was a Postdoctoral Researcher at the Computer Science Department, Tsinghua University, Beijing, China, where in 1994, he became an Associate Professor. From 1996 to 1997, he served as a Research Associate at Hong Kong Polytechnic University, Kowloon, Hong Kong, China. From 2001 to 2003, he was a Visiting Professor at the Washington University in St. Louis, St. Louis, MO, USA. He has been a Full Professor at Tsinghua University since 2000. His current research interests include artificial intelligence, deep learning, computational neuroscience, computational biology, driverless car, robotics, wireless sensor network, and virtual reality.
+%\end{biography}
 
 
 
