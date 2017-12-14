@@ -147,7 +147,7 @@ Anonymous Submission.
 \linespread{1.6667} %
 \noindent
 \bf{Abstract:} {\sf
-Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign pixel-level labeling to the given image. Since it is required to make dense predictions for the entire image, a simple network is hardly qualified to obtain considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CasNet, which aims to pay more attention to the difficult regions. There are three branches in the CasNet. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the last branch generates fine predictions and further combine both the coarse and fine predicting results though weighting coefficient which is estimated by the second branch.
+Semantic segmentation, also known as scene labeling, is a fundamental topic in computer vision. The goal is to assign pixel-level label to a given image. Since it is required to make dense predictions for the entire image, a simple network is hardly qualified to achieve considerable performances on different scenes. In this paper, we propose a cascaded coarse-to-fine network called CasNet, which aims to pay more attention to the difficult regions. There are three branches in the CasNet. The first branch is responsible for handling easy regions by producing coarse predictions. Subsequently, the second branch learns to distinguish the relatively difficult pixels from the entire image. Finally, the last branch generates fine predictions and further combine both the coarse and fine prediction results though weighting coefficient which is estimated by the second branch.
 All above branches focus on their own objectives and collaboratively learn to predict from coarse to fine. In order to evaluate the performance of the proposed network, we conduct experiments on two public datasets including Sift Flow and Stanford Background Dataset. We show that the three branches can be trained in an end-to-end manner and the experimental results demonstrate that compared to all existing models, our CasNet consistently yields the best performance, with accuracy of 91.6\% and 89.7\%, respectively.
 }
 \vskip 4mm
@@ -193,7 +193,7 @@ semantic segmentation; hard negative mining; convolutional neural network
 \label{s:introduction}
 \noindent
 
-Semantic segmentation has a wide range of applications, including environment perception and autonomous self driving car. The goal of semantic segmentation is to identify and assign a category label to each pixel in the image, which requires a complete understanding of the context of the whole image. In recent years, deep learning has made great breakthroughs in computer vision, such as image classification\upcite{1}, speech recognition\upcite{2}, and object detection\upcite{3}. For the task of semantic segmentation, there are also lots of methods based on deep learning. Early research attempts to apply CNNs designed for image classification directly to semantic segmentation. Although good segmentation results can be obtained, the prediction results are rough and the edges of objects are difficult to recognized correctly. This is mainly caused by lacking of location information. Consequently, the fully convolutional neural network(FCN)\upcite{4} is proposed to overcome this disadvantage, and becomes the most popular framework for semantic segmentation. However, there still exists several challenges to work with.
+Semantic segmentation has a wide range of applications, including environment perception and autonomous self driving car. The goal of semantic segmentation is to identify and assign a category label to each pixel in the image, which requires a complete understanding of the context of the whole image. In recent years, deep learning has made great breakthroughs in computer vision, such as image classification\upcite{1}, speech recognition\upcite{2}, and object detection\upcite{3}. For the task of semantic segmentation, there are also lots of methods based on deep learning. Early research attempts to apply CNNs designed for image classification directly to semantic segmentation. Although good segmentation results can be obtained, the prediction results are rough and the edges of objects are difficult to recognized correctly. This is mainly caused by lacking of location information. Consequently, the fully convolutional neural network (FCN)\upcite{4} is proposed to overcome this disadvantage, and becomes the most popular framework for semantic segmentation. However, there still exists several challenges to work with.
 
 On the one hand, in order to improve the localization of object boundaries, conditional random field, Markov random field, Gaussian conditional random field, and other variations are proposed. Besides, with the rapid development of CNN architectures, a network via end-to-end training procedure, such as ResNet\upcite{1}, can achieve the same or even better segmentation results. On the other hand, the unbalance of the easy and difficult pixels can also wreck the convergence of the network. Automatic selection of these hard examples can make training more effective and efficient. In fact, hard negative mining is not a new concept. As early as 1994, Sung and Poggio~\upcite{5} proposed bootstrapping method in their face detection algorithm. The main purpose is to enhance the detection capacity by changing the distribution of difficult samples. 
 
@@ -383,7 +383,9 @@ The three branches are cascaded one by one, and constitute an end-to-end learnin
 \section{Experimental results}
 \label{s:results}
 \noindent
-In this section, we present the detailed information about the implementation of CasNet. Moreover, we compare our model to the current state-of-the-art methods. The proposed model achieves superior performances among the existing methods.
+In this section, we present the detailed information about the implementation of CasNet. 
+%added by wangshy
+Moreover, we conduct an ablation study in order to prove the effectiveness of the proposed network in Section~\ref{s:ablation} and compare our model to the current state-of-the-art methods in Section~\ref{s:comparison}. The proposed model achieves superior performances among the existing methods.
 
 \subsection{Datasets}
 \noindent
@@ -401,33 +403,48 @@ Different kinds of data argumentation methods are used to ameliorate the diversi
 In this paper, we also employ this kind of methods with a combination of scaling and translation. 
 Larger input size and batch size can help improve the segmentation performance. But due to the limitation of both computation and memory, we randomly crop $233\times233$ part from multi-scale input images, and training is done in mini-batch of size 4.
 
-
-
-\subsection{Comparison Results}
-\noindent
-
-We first conduct several comparison experiments on SIFT Flow dataset.
-Firstly, we compare CasNet with a baseline model, which is composed by a ResNet and two FCN layers. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the coarse branch of CasNet. The comparison result is show as Table~\ref{t:self1}, CasNet leads to about 1\% gain in comparison to the baseline ResNet segmentation network. Since CasNet is effective to refine the segmentation results.
-
-\begin{table}[h]
-\large
-\setlength{\belowcaptionskip}{12pt}
-\caption{The Comparison Result with Baseline Model on SIFT Flow.}
-\label{t:self1}
-\centering
-\begin{tabular}{ccc}
-\hline 
-Methods & Pixel acc. \\
+\begin{table*}[t]
+\renewcommand{\arraystretch}{1.125}
+\begin{center}
+\begin{tabular}{p{5cm}|p{1cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}} 
 \hline
-Baseline(ResNet) & 90.52 \\
-CasNet & 91.6  \\
+Dataset & \multicolumn{3}{c}{SIFT Flow} & \multicolumn{3}{c}{Stanford background}\\
+\hline
+Methods & (a)&(b)&(c)&(a)&(b)&(c) \\
+\hline
+Coarse Branch? &\scriptsize{${\surd}$}&\scriptsize{${\surd}$}&\scriptsize{${\surd}$}&\scriptsize{${\surd}$}&\scriptsize{${\surd}$}&\scriptsize{${\surd}$}\\
+Refine Branch? & &\scriptsize{${\surd}$}&\scriptsize{${\surd}$}& &\scriptsize{${\surd}$}&\scriptsize{${\surd}$}\\
+Attention Branch?& & &\scriptsize{${\surd}$} & & &\scriptsize{${\surd}$} \\
+\hline
+Pixel acc. &\small{*}&\small{* $\uparrow_{*}$}&\small{91.6$\uparrow_{*}$}&\small{*}&\small{* $\uparrow_{*}$}&\small{89.7 $\uparrow_{*}$}}\\
 \hline
 \end{tabular}
-\end{table}
+\end{center}
+\caption{Ablation study on both SIFT Flow and Stanford background datasets.}
+\label{table0}
+\end{table*}
 
-A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images, and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the overall network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
 
-In addition, on the SIFT Flow dataset, we compare the CasNet to other segmentation methods. Pixel-level semantic segmentation is usually measured by two accuracy measures: Pixel Accuracy and Class Accuracy. The average pixel accuracy is the percentage of the total number of pixels that correctly classified on the test set, and it is usually measured by the intersection-over-union (IoU). The average category accuracy is the average of the correct rate for each category of pixel classification. The experimental results which is shown in Table \ref{table1} which prove that CasNet achieves an accuracy of 91.6\%, and outperform the current state-of-the-art results.
+\subsection{Ablation Study}
+\label{s:ablation}
+\noindent
+
+In this section, we conduct an ablation study in order to prove the effectiveness of the proposed network. The comparison results on both the SIFT Flow and Stanford background are shown in Table \ref{table0}.
+
+\textbf{\emph{Method (a)}} is the coarse branch model which can regarded as a simple baseline. It adopts a FCN that consisted of two convolutional layers to predict the semantic classes for relatively easy and confident regions. And this coarse branch can achieve ** prediction accuracy on SIFT Flow and *** on Stanford background.
+
+\textbf{\emph{Method (b)}} is conducted by combination of both the coarse and refine segmentation branch. Without the learnable attention branch, we fuse the predictions from the coarse and the refine branch with a static weight (e.g. 0.5) to generate the final prediction results. Compared to the simple coarse branch, it improves the overall performance by ***\% on SIFT Flow and *** on Stanford background, respectively.
+
+\textbf{\emph{Method (c)}} incorporates the attention branch. The prediction of this attention branch will be used as weighting coefficients for  promoting the prediction results rather than a static weight. It helps to further enhance the performance from ***\% to ***\%.
+
+To sum up, explicitly modeling the difficulty of segmenting each pixel is quite necessary, and the combination of coarse and refine branch is capable of make dense prediction of all the pixels within a given image collaboratively. Benefit from above modules, the overall mAP is improved from *\% to * \% on SIFT Flow and *\% to * \% on Stanford background.
+
+\subsection{Comparison with State-of-the-art Models}
+\label{s:comparison}
+\noindent
+
+We first conduct several comparison experiments on SIFT Flow dataset. Pixel-level semantic segmentation is usually measured by two accuracy measures: Pixel Accuracy and Class Accuracy. The average pixel accuracy is the percentage of the total number of pixels that correctly classified on the test set, and it is usually measured by the intersection-over-union (IoU). The average category accuracy is the average of the correct rate for each category of pixel classification. The experimental results which is shown in Table \ref{table1} which prove that CasNet achieves an accuracy of 91.6\%, and outperform the current state-of-the-art results.
+
 
 \begin{table}[h]
 \large
@@ -447,6 +464,8 @@ Farabet et al. balanced\upcite{11} & 78.5 & 29.6 \\
 Pinheiro et al.\upcite{13} & 77.7 & 29.8 \\
 Liang et al. RCNN\upcite{24} & 84.3 & 41.0 \\
 Shelhamer et al. FCN-8s\upcite{4} & 85.9 & 53.9 \\
+He et al. \upcite{1} & 90.52  & * \\
+2017!!!! et al. \upcite{*} & * & * \\
 \textbf{CasNet} & 91.6 & 52.5 \\
 
 \hline
@@ -472,6 +491,8 @@ Eigen and Fergus\upcite{28} & 75.3 & 66.5 \\
 Singh and Kosecka\upcite{27} & 74.1 & 62.2 \\
 Lempitsky et al.\upcite{10} & 81.9 & 72.4 \\
 Liang et al. RCNN\upcite{24} & 83.1 & 74.8 \\
+He et al. \upcite{1} & * & * \\
+2017!!!\upcite{*} & * & * \\
 \textbf{CasNet} & 89.7 & 75.4 \\
 \hline
 \end{tabular}
@@ -483,6 +504,10 @@ Liang et al. RCNN\upcite{24} & 83.1 & 74.8 \\
 \caption{The predict results on Stanford Background dataset.}
 \label{fig4}
 \end{figure} 
+
+Notice that we compare CasNet with a model that is composed by a ResNet and two FCN layers which is indicated by ``He et al.\upcite{1}'' in Table \ref{table1} and Table \ref{table2}. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the refine branch of CasNet. It outperforms other methods by using a strong feature extractor. From this perspective, a better feature extractor is quite import to this vision task. In particular, CasNet still leads to about 1\% gain in comparison to the baseline ResNet segmentation network since CasNet is effective to refine the segmentation results.
+
+A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images, and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the overall network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
 
 \section{Conclusions}
 \noindent
@@ -553,7 +578,7 @@ Farabet C, Couprie C, Najman L, et al. Learning hierarchical features for scene 
 \bibitem[11]{12}
 Couprie C, Farabet C, Najman L, et al. Indoor semantic segmentation using depth information[J]. arXiv preprint arXiv:1301.3572, 2013.
 
-\bibitem[26]{13}
+\bibitem[12]{13}
 Pinheiro P H O, Collobert R. Recurrent Convolutional Neural Networks for Scene Labeling[C]//ICML. 2014: 82-90.
 
 %\bibitem[14]{14}
@@ -565,58 +590,68 @@ Pinheiro P H O, Collobert R. Recurrent Convolutional Neural Networks for Scene L
 %\bibitem[16]{16}
 %Shuai B, Zuo Z, Wang B, et al. Dag-recurrent neural networks for scene labeling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3620-3629.
 
-\bibitem[12]{17}
+\bibitem[13]{17}
 Mostajabi M, Yadollahpour P, Shakhnarovich G. Feedforward semantic segmentation with zoom-out features[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3376-3385.
 
 %\bibitem[18]{18}
 %Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
 
-\bibitem[13]{19}
+\bibitem[14]{19}
 Long J, Shelhamer E, Darrell T. Fully convolutional networks for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 3431-3440.
 
 %\bibitem[20]{20}
 %Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.
 
-\bibitem[14]{21}
+\bibitem[15]{21}
 Zhao H, Shi J, Qi X, et al. Pyramid Scene Parsing Network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.
 
-\bibitem[15]{22}
+\bibitem[16]{22}
 Veit, Andreas, Michael J. Wilber, and Serge Belongie. "Residual networks behave like ensembles of relatively shallow networks." Advances in Neural Information Processing Systems. 2016.
 
-\bibitem[16]{23}
+\bibitem[17]{23}
 Jia Y, Shelhamer E, Donahue J, et al. Caffe: Convolutional architecture for fast feature embedding[C]//Proceedings of the 22nd ACM international conference on Multimedia. ACM, 2014: 675-678.
 
-\bibitem[17]{24}
+\bibitem[18]{24}
 Liang, Ming, Xiaolin Hu, and Bo Zhang. "Convolutional neural networks with intra-layer recurrent connections for scene labeling." Advances in Neural Information Processing Systems. 2015.
 
-\bibitem[18]{25}
+\bibitem[19]{25}
 Tighe J, Lazebnik S. Superparsing: scalable nonparametric image parsing with superpixels[C]//European conference on computer vision. Springer Berlin Heidelberg, 2010: 352-365.
 
-\bibitem[19]{26}
+\bibitem[20]{26}
 Tighe J, Lazebnik S. Finding things: Image parsing with regions and per-exemplar detectors[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2013: 3001-3008.
 
-\bibitem[20]{27}
+\bibitem[21]{27}
 Singh G, Kosecka J. Nonparametric scene parsing with adaptive feature relevance and semantic context[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2013: 3151-3157.
 
-\bibitem[21]{28}
+\bibitem[22]{28}
 Eigen D, Fergus R. Nonparametric image parsing using adaptive neighbor sets[C]//Computer vision and pattern recognition (CVPR), 2012 IEEE Conference on. IEEE, 2012: 2799-2806.
 
-\bibitem[22]{29}
+\bibitem[23]{29}
 Yu F, Koltun V. Multi-scale context aggregation by dilated convolutions[J]. arXiv preprint arXiv:1511.07122, 2015.
 
-\bibitem[23]{30}
+\bibitem[24]{30}
 Visin F, Ciccone M, Romero A, et al. Reseg: A recurrent neural network-based model for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops. 2016: 41-48.
 
-\bibitem[24]{31}
+\bibitem[25]{31}
 Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. arXiv preprint arXiv:1606.00915, 2016.
 
-\bibitem[25]{32}
+\bibitem[26]{32}
 Zheng S, Jayasumana S, Romera-Paredes B, et al. Conditional random fields as recurrent neural networks[C]//Proceedings of the IEEE International Conference on Computer Vision. 2015: 1529-1537.
 
+\bibitem[27]{33}
+He X, Zemel R S, Carreira-Perpiñán M Á. Multiscale conditional random fields for image labeling[C]//Computer vision and pattern recognition, 2004. CVPR 2004. Proceedings of the 2004 IEEE computer society conference on. IEEE, 2004, 2: II-II.
 
+\bibitem[28]{34}
+Liu B, He X. Learning dynamic hierarchical models for anytime scene labeling[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 650-666.
 
-\begin{strip}
-\end{strip}
+\bibitem[29]{35}
+Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. arXiv preprint arXiv:1606.00915, 2016.
+
+\bibitem[30]{36}
+Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[J]. arXiv preprint arXiv:1612.03144, 2016.
+
+%\begin{strip}
+%\end{strip}
 
 %\begin{biography}[wangzhy.png]
 %\noindent
