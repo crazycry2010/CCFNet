@@ -215,7 +215,7 @@ To sum up, we address the task of semantic image segmentation with a cascaded co
 \noindent
 Semantic segmentation aims to assign an unique semantic class to each pixel of the input image. Early work is mainly based on hand-craft features, until the convolution neural network is successfully applied to this task in recent years.
 
-Traditional methods have obtained several solutions on semantic segmentation. Considering the context information, several methods based on MRF, CRF or other types of graphical models are proposed to ensure the consistency of labeling\upcite{8,10}. For semantic segmentation task, both the global and local context have great impacts on the final segmentation results. Traditional methods only take the low-level features of the image into consideration, which is particularly problematic for this task.
+Traditional methods have obtained several solutions on semantic segmentation. Considering the context information, several methods based on MRF, CRF or other types of graphical models are proposed to ensure the consistency of labeling\upcite{8,10,33}. For semantic segmentation task, both the global and local context have great impacts on the final segmentation results. Traditional methods only take the low-level features of the image into consideration or lack in capacities of extracting hierarchical representations, which is particularly problematic for this task.
 
 \begin{figure*}[!ht]
 \centering
@@ -224,13 +224,13 @@ Traditional methods have obtained several solutions on semantic segmentation. Co
 \label{fig2}
 \end{figure*} 
 
-Driven by deep neural networks, there are three types of methods devoted to improve architectural design. One direction is mainly based on multi-scale feature ensemble, since high layer feature contains more semantic information. To our knowledge,  Farabet et.al.~\upcite{11}  pioneer to apply CNNs to semantic segmentation. They propose a multi-scale convolution neural network, which can extract features from different scale of local regions. The experimental results show that their network has capacities of learning texture, shape and domain information implicitly. A similar idea is successfully generalized to RGB-D images by Couprie et.al.~\upcite{12}. Zhao et. al.~\upcite{21} propose pyramid pooling to aggregate different level of context information, which can effectively produce good quality results on semantic segmentation task.
+Driven by deep neural networks, there are three types of methods devoted to improve architectural design. One direction is mainly based on multi-scale feature ensemble, since high layer feature contains more semantic information. To our knowledge,  Farabet et.al.~\upcite{11}  pioneer to apply CNNs to semantic segmentation. They propose a multi-scale convolution neural network, which can extract features from different scale of local regions. The experimental results show that their network has capacities of learning texture, shape and domain information implicitly. A similar idea is successfully generalized to RGB-D images by Couprie et.al.~\upcite{12}. Zhao et. al.~\upcite{21} propose pyramid pooling to aggregate different level of context information, which can effectively produce good quality results on semantic segmentation task. In terms of pyramid features,  Lin et. al.~\upcite{36}  exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to generate feature pyramids with marginal extra cost.
 
-Another direction focuses on enlarging the receptive field of neural networks. Yu and Koltun~\upcite{29} propose dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. In \cite{30}, recurrent neural networks are used to retrieve contextual information by sweeping the image horizontally and vertically in both directions. Besides, Liang~\upcite{24} adopts recurrent convolutional neural network to incorporate both the local discriminative features and the global context information.
+Another direction focuses on enlarging the receptive field of neural networks. Yu and Koltun~\upcite{29} propose dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. In \cite{30}, recurrent neural networks are used to retrieve contextual information by sweeping the image horizontally and vertically in both directions. Besides, Liang~\upcite{24} adopts recurrent convolutional neural network to incorporate both the local discriminative features and the global context information. Chen et. al. ~\cite{35} proposed ``atrous convolution'' in order to explicitly control the resolution of feature response.
 
 The last direction endow FCN architectures with the ability to provide structured outputs. 
 Chen et.al.~\upcite{31} are the pioneers who first adopt conditional random field  as post processing to refine the final segmentation results. Zheng et.al.~\upcite{32} follow the work. They combine
-the strengths of convolutional neural networks and conditional random fields based on probabilistic graphical modeling, making it possible to train the whole deep network end-to-end.
+the strengths of convolutional neural networks and conditional random fields based on probabilistic graphical modeling, making it possible to train the whole deep network end-to-end. Chen et. al. ~\cite{35} combine the responses at the final DCNN layer with a fully connected CRF to improve the localization of object boundaries.
 
 At the same time, researchers attempt to use the pre-trained CNNs for semantic segmentation. Mostajabi et.al.~\upcite{17} obtain the local features by using convolutional neural networks, while  global feature representations are produced from Alex-net. These above features are further aggregated to predict the categories. Differ from this method, \cite{19} present a fully convolutional network which is able to take input of arbitrary sizes and produce correspondingly-sized output with efficient inference and learning. They use the CNNs trained on ImageNet as a feature extractor and transfer their learned representations by fine-tuning on the task-specific datasets.
 
@@ -344,6 +344,13 @@ During the testing process, the attention branch heuristically filter out the ha
 
 The refine segmentation branch is cascaded behind the coarse and the attention as shown on the third row in Figure~\ref{fig2}. This branch is more complicated compared with the first two branches. It contains a fine segmentation network $\mathcal{F}_{fine}$ in Equation \ref{equ7} and a weighted summation $p_{refine}(i,j)$ in Equation \ref{equ8} to refine the final segmentation results.
 
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=1.9\columnwidth]{fig3.png}
+\caption{The visualization predicting result of CasNet.}
+\label{fig3}
+\end{figure*} 
+
 Since the coarse segmentation branch is hard to segment all the pixels correctly, the pixel which can be segment correctly by the coarse segmentation branch is denoted as easy pixel instances, while the others are difficult ones.
 A fine segmentation network is introduced to focus on reclassification of the difficult pixel instances. Inspired by the PSPNet~\upcite{21}, pyramid pooling is adopted by the fine segmentation network to extract multi-scale features. And the final segmentation results is a weighted summation of the coarse segmentation branch and the fine segmentation network, with the weighting coefficient predicted by the attention branch. The final segmentation results rely more on the coarse segmentation branch if the pixel is predicted as an easy one. Otherwise, the fine segmentation network takes up a larger proportion. 
 \begin{equation}\label{equ7}
@@ -372,13 +379,6 @@ where $p_{f}(i,j)$ is the prediction result produced by fine segmentation networ
 
 The three branches are cascaded one by one, and constitute an end-to-end learning network with multiple loss functions.
 
-
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=1.9\columnwidth]{fig3.png}
-\caption{The visualization predicting result of CasNet.}
-\label{fig3}
-\end{figure*} 
 
 \section{Experimental results}
 \label{s:results}
@@ -464,8 +464,8 @@ Farabet et al. balanced\upcite{11} & 78.5 & 29.6 \\
 Pinheiro et al.\upcite{13} & 77.7 & 29.8 \\
 Liang et al. RCNN\upcite{24} & 84.3 & 41.0 \\
 Shelhamer et al. FCN-8s\upcite{4} & 85.9 & 53.9 \\
+Jin et al. \upcite{37} & 86.9 & 56.5 \\
 He et al. \upcite{1} & 90.52  & * \\
-2017!!!! et al. \upcite{*} & * & * \\
 \textbf{CasNet} & 91.6 & 52.5 \\
 
 \hline
@@ -474,9 +474,17 @@ He et al. \upcite{1} & 90.52  & * \\
 
 In order to prove the generalisation of the learning scheme of the semantic segmentation, we test the CasNet on another dataset called Stanford Background by using the same architecture and configurations. Table \ref{table2} shows that on the Stanford Background dataset, CasNet achieved 89.7\% pixel average accuracy and 75.4\% classification accuracy. Some of the prediction results are shown in Figure~\ref{fig4}, which can be clearly seen the predicted results.
 
-\begin{table}[h]
+
+
+Notice that we compare CasNet with a model that is composed by a ResNet and two FCN layers which is indicated by ``He et al.\upcite{1}'' in Table \ref{table1} and Table \ref{table2}. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the refine branch of CasNet. It outperforms other methods by using a strong feature extractor. From this perspective, a better feature extractor is quite import to this vision task. In particular, CasNet still leads to about 1\% gain in comparison to the baseline ResNet segmentation network since CasNet is effective to refine the segmentation results.
+
+A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images, and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the overall network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
+
+
+
+\begin{table}[htbp]
 \large
-\setlength{\belowcaptionskip}{12pt}
+\setlength{\belowcaptionskip}{10pt}
 \caption{The Segmentation Results on Stanford background.}
 \label{table2}
 \centering
@@ -491,23 +499,13 @@ Eigen and Fergus\upcite{28} & 75.3 & 66.5 \\
 Singh and Kosecka\upcite{27} & 74.1 & 62.2 \\
 Lempitsky et al.\upcite{10} & 81.9 & 72.4 \\
 Liang et al. RCNN\upcite{24} & 83.1 & 74.8 \\
+Jin et al. \upcite{37} & 86.6 & 79 \\
 He et al. \upcite{1} & * & * \\
-2017!!!\upcite{*} & * & * \\
 \textbf{CasNet} & 89.7 & 75.4 \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.85\columnwidth]{fig4.png}
-\caption{The predict results on Stanford Background dataset.}
-\label{fig4}
-\end{figure} 
-
-Notice that we compare CasNet with a model that is composed by a ResNet and two FCN layers which is indicated by ``He et al.\upcite{1}'' in Table \ref{table1} and Table \ref{table2}. The baseline model is a  typical FCN segmentation network based on ResNet-50, and has a same network architecture as the refine branch of CasNet. It outperforms other methods by using a strong feature extractor. From this perspective, a better feature extractor is quite import to this vision task. In particular, CasNet still leads to about 1\% gain in comparison to the baseline ResNet segmentation network since CasNet is effective to refine the segmentation results.
-
-A visualisation of the intermediate network feature is show in Figure~\ref{fig3}, which consists of four columns. The first column presents the input images, and second column shows the ground truth labels. In particular, the third column indicates hard pixels predicted by the attention branch of CasNet while the last column is the segmentation results of the overall network. As can be seen from the third and fourth columns of Figure~\ref{fig3}, CasNet can indeed predict the hard pixel samples which are indicated in the yellow square box of last column in Figure~\ref{fig3}.
 
 \section{Conclusions}
 \noindent
@@ -518,6 +516,13 @@ While the second branch is an attention network used to predict the difficulty o
 And the third branch refines the final segmentation results by taking a weighted average of multiple branches.
 In order to evaluate the performance of CasNet, we conduct experiments on two public datasets including Sift Flow Dataset and Stanford Background Dataset. 
 We show how to train these three branches in an end-to-end manner. And finally, the experimental results show that compared to all existing models, our CasNet consistently yields the best performance, with the accuracy of 91.6\% and 89.7\%, respectively.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\columnwidth]{fig4.png}
+\caption{The predict results on Stanford Background dataset.}
+\label{fig4}
+\end{figure} 
 
 
 \vskip 2mm
@@ -649,6 +654,9 @@ Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation 
 
 \bibitem[30]{36}
 Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[J]. arXiv preprint arXiv:1612.03144, 2016.
+
+\bibitem[31]{37}
+Jin X, Chen Y, Jie Z, et al. Multi-Path Feedback Recurrent Neural Networks for Scene Parsing[C]//AAAI. 2017: 4096-4102.
 
 %\begin{strip}
 %\end{strip}
